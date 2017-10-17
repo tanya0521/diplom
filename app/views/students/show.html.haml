@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Fn:
+  = @student.fn
+%p
+  %b Sn:
+  = @student.sn
+%p
+  %b Ln:
+  = @student.ln
+%p
+  %b Birthday:
+  = @student.birthday
+%p
+  %b Course:
+  = @student.course
+%p
+  %b Faculty:
+  = @student.faculty
+%p
+  %b Group:
+  = @student.group
+
+= link_to 'Edit', edit_student_path(@student)
+\|
+= link_to 'Back', students_path

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Quantity5:
+  = @perform_datum.quantity5
+%p
+  %b Quantity4:
+  = @perform_datum.quantity4
+%p
+  %b Quantity3:
+  = @perform_datum.quantity3
+%p
+  %b Quantity2:
+  = @perform_datum.quantity2
+%p
+  %b Student:
+  = @perform_datum.student
+%p
+  %b Scholarship period:
+  = @perform_datum.scholarship_period
+
+= link_to 'Edit', edit_perform_datum_path(@perform_datum)
+\|
+= link_to 'Back', perform_data_path

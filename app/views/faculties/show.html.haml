@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Namef:
+  = @faculty.namef
+%p
+  %b Group:
+  = @faculty.group
+
+= link_to 'Edit', edit_faculty_path(@faculty)
+\|
+= link_to 'Back', faculties_path

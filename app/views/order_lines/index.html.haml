@@ -1,0 +1,33 @@
+%h1 Listing order_lines
+
+%table
+  %thead
+    %tr
+      %th Begin_date
+      %th End_date
+      %th scholarship
+      %th Student
+      %th Order
+      %th Scholarship period
+      %th Type scholarship
+      %th
+      %th
+      %th
+
+  %tbody
+    - @order_lines.each do |order_line|
+      %tr
+        %td= order_line.begin_date
+        %td= order_line.end_date
+        %td= order_line.scholarship
+        %td= order_line.student
+        %td= order_line.order
+        %td= order_line.scholarship_period
+        %td= order_line.type_scholarship
+        %td= link_to 'Show', order_line
+        %td= link_to 'Edit', edit_order_line_path(order_line)
+        %td= link_to 'Destroy', order_line, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Order line', new_order_line_path

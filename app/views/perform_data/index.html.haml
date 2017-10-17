@@ -1,0 +1,31 @@
+%h1 Listing perform_data
+
+%table
+  %thead
+    %tr
+      %th Quantity5
+      %th Quantity4
+      %th Quantity3
+      %th Quantity2
+      %th Student
+      %th Scholarship period
+      %th
+      %th
+      %th
+
+  %tbody
+    - @perform_data.each do |perform_datum|
+      %tr
+        %td= perform_datum.quantity5
+        %td= perform_datum.quantity4
+        %td= perform_datum.quantity3
+        %td= perform_datum.quantity2
+        %td= perform_datum.student
+        %td= perform_datum.scholarship_period
+        %td= link_to 'Show', perform_datum
+        %td= link_to 'Edit', edit_perform_datum_path(perform_datum)
+        %td= link_to 'Destroy', perform_datum, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Perform datum', new_perform_datum_path

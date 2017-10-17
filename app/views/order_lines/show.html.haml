@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Namelo:
+  = @order_line.begin_date
+%p
+  %b Namelo:
+  = @order_line.end_date
+%p
+  %b Namelo:
+  = @order_line.scholarship
+%p
+  %b Student:
+  = @order_line.student
+%p
+  %b Order:
+  = @order_line.order
+%p
+  %b Scholarship period:
+  = @order_line.scholarship_period
+%p
+  %b Type scholarship:
+  = @order_line.type_scholarship
+
+= link_to 'Edit', edit_order_line_path(@order_line)
+\|
+= link_to 'Back', order_lines_path

@@ -1,0 +1,31 @@
+= form_for @order_line do |f|
+  - if @order_line.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@order_line.errors.count, "error")} prohibited this order_line from being saved:"
+      %ul
+        - @order_line.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :begin_date
+    = f.text_area :begin_date
+  .field
+    = f.label :end_date
+    = f.text_area :end_date
+  .field
+    = f.label :scholarship
+    = f.text_area :scholarship
+  .field
+    = f.label :student
+    = f.text_field :student
+  .field
+    = f.label :order
+    = f.text_field :order
+  .field
+    = f.label :scholarship_period
+    = f.text_field :scholarship_period
+  .field
+    = f.label :type_scholarship
+    = f.text_field :type_scholarship
+  .actions
+    = f.submit 'Save'

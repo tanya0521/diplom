@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_financing: MyText
+  suum: 1
+  faculty: one
+  scholarship_period: one
+  type_scholarship: one
+
+two:
+  name_financing: MyText
+  suum: 1
+  faculty: two
+  scholarship_period: two
+  type_scholarship: two

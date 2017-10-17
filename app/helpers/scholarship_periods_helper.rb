@@ -1,0 +1,2 @@
+module ScholarshipPeriodsHelper
+end

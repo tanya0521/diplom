@@ -1,0 +1,29 @@
+%h1 Listing financings
+
+%table
+  %thead
+    %tr
+      %th Name financing
+      %th Suum
+      %th Faculty
+      %th Scholarship period
+      %th Type scholarship
+      %th
+      %th
+      %th
+
+  %tbody
+    - @financings.each do |financing|
+      %tr
+        %td= financing.name_financing
+        %td= financing.suum
+        %td= financing.faculty
+        %td= financing.scholarship_period
+        %td= financing.type_scholarship_id
+        %td= link_to 'Show', financing
+        %td= link_to 'Edit', edit_financing_path(financing)
+        %td= link_to 'Destroy', financing, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Financing', new_financing_path

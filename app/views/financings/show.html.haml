@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name financing:
+  = @financing.name_financing
+%p
+  %b Suum:
+  = @financing.suum
+%p
+  %b Faculty:
+  = @financing.faculty
+%p
+  %b Scholarship period:
+  = @financing.scholarship_period
+%p
+  %b Type scholarship:
+  = @financing.type_scholarship_id
+
+= link_to 'Edit', edit_financing_path(@financing)
+\|
+= link_to 'Back', financings_path

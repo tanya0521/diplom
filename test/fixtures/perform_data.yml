@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity5: 1
+  quantity4: 1
+  quantity3: 1
+  quantity2: 1
+  student: one
+  scholarship_period: one
+
+two:
+  quantity5: 1
+  quantity4: 1
+  quantity3: 1
+  quantity2: 1
+  student: two
+  scholarship_period: two

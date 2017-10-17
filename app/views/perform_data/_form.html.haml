@@ -1,0 +1,28 @@
+= form_for @perform_datum do |f|
+  - if @perform_datum.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@perform_datum.errors.count, "error")} prohibited this perform_datum from being saved:"
+      %ul
+        - @perform_datum.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :quantity5
+    = f.number_field :quantity5
+  .field
+    = f.label :quantity4
+    = f.number_field :quantity4
+  .field
+    = f.label :quantity3
+    = f.number_field :quantity3
+  .field
+    = f.label :quantity2
+    = f.number_field :quantity2
+  .field
+    = f.label :student
+    = f.text_field :student
+  .field
+    = f.label :scholarship_period
+    = f.text_field :scholarship_period
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Begin:
+  = @scholarship_period.begin
+%p
+  %b End:
+  = @scholarship_period.end
+
+= link_to 'Edit', edit_scholarship_period_path(@scholarship_period)
+\|
+= link_to 'Back', scholarship_periods_path

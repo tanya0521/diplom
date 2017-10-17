@@ -1,0 +1,23 @@
+%h1 Listing scholarship_periods
+
+%table
+  %thead
+    %tr
+      %th Begin
+      %th End
+      %th
+      %th
+      %th
+
+  %tbody
+    - @scholarship_periods.each do |scholarship_period|
+      %tr
+        %td= scholarship_period.begin
+        %td= scholarship_period.end
+        %td= link_to 'Show', scholarship_period
+        %td= link_to 'Edit', edit_scholarship_period_path(scholarship_period)
+        %td= link_to 'Destroy', scholarship_period, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Scholarship period', new_scholarship_period_path

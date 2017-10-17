@@ -1,0 +1,25 @@
+= form_for @financing do |f|
+  - if @financing.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@financing.errors.count, "error")} prohibited this financing from being saved:"
+      %ul
+        - @financing.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name_financing
+    = f.text_area :name_financing
+  .field
+    = f.label :suum
+    = f.number_field :suum
+  .field
+    = f.label :faculty
+    = f.text_field :faculty
+  .field
+    = f.label :scholarship_period
+    = f.text_field :scholarship_period
+  .field
+    = f.label :type_scholarship
+    = f.text_field :type_scholarship_id
+  .actions
+    = f.submit 'Save'

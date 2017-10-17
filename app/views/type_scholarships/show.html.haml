@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name financing:
+  = @type_scholarship.name_financing
+%p
+  %b Typescholarship:
+  = @type_scholarship.typescholarship
+
+= link_to 'Edit', edit_type_scholarship_path(@type_scholarship)
+\|
+= link_to 'Back', type_scholarships_path

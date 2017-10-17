@@ -1,0 +1,16 @@
+= form_for @scholarship_period do |f|
+  - if @scholarship_period.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@scholarship_period.errors.count, "error")} prohibited this scholarship_period from being saved:"
+      %ul
+        - @scholarship_period.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :begin
+    = f.date_select :begin
+  .field
+    = f.label :end
+    = f.date_select :end
+  .actions
+    = f.submit 'Save'

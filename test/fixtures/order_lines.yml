@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  namelo: MyText
+  student: one
+  order: one
+  scholarship_period: one
+  type_scholarship: one
+
+two:
+  namelo: MyText
+  student: two
+  order: two
+  scholarship_period: two
+  type_scholarship: two

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fn: MyText
+  sn: MyText
+  ln: MyText
+  birthday: MyString
+  course: 1
+  faculty: one
+  group: one
+
+two:
+  fn: MyText
+  sn: MyText
+  ln: MyText
+  birthday: MyString
+  course: 1
+  faculty: two
+  group: two

@@ -1,0 +1,23 @@
+%h1 Listing type_scholarships
+
+%table
+  %thead
+    %tr
+      %th Name financing
+      %th Typescholarship
+      %th
+      %th
+      %th
+
+  %tbody
+    - @type_scholarships.each do |type_scholarship|
+      %tr
+        %td= type_scholarship.name_financing
+        %td= type_scholarship.typescholarship
+        %td= link_to 'Show', type_scholarship
+        %td= link_to 'Edit', edit_type_scholarship_path(type_scholarship)
+        %td= link_to 'Destroy', type_scholarship, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Type scholarship', new_type_scholarship_path

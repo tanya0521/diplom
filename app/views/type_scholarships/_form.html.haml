@@ -1,0 +1,16 @@
+= form_for @type_scholarship do |f|
+  - if @type_scholarship.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@type_scholarship.errors.count, "error")} prohibited this type_scholarship from being saved:"
+      %ul
+        - @type_scholarship.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name_financing
+    = f.text_area :name_financing
+  .field
+    = f.label :typescholarship
+    = f.text_area :typescholarship
+  .actions
+    = f.submit 'Save'
