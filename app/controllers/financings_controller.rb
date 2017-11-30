@@ -28,7 +28,7 @@ class FinancingsController < ApplicationController
 
     respond_to do |format|
       if @financing.save
-        format.html { redirect_to @financing, notice: 'Financing was successfully created.' }
+        format.html { redirect_to @financing, notice: 'Успешно создано.' }
         format.json { render :show, status: :created, location: @financing }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class FinancingsController < ApplicationController
   def update
     respond_to do |format|
       if @financing.update(financing_params)
-        format.html { redirect_to @financing, notice: 'Financing was successfully updated.' }
+        format.html { redirect_to @financing, notice: 'Успешно отредактировано.' }
         format.json { render :show, status: :ok, location: @financing }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class FinancingsController < ApplicationController
   def destroy
     @financing.destroy
     respond_to do |format|
-      format.html { redirect_to financings_url, notice: 'Financing was successfully destroyed.' }
+      format.html { redirect_to financings_url, notice: 'Успешно удалено.' }
       format.json { head :no_content }
     end
   end

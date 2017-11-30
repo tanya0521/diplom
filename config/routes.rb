@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'admin/load_term_data_form_json', as: :ltdfj
+
+  post 'admin/load_term_data_from_json_commit', as: :ltdfjc
+
+  get 'admin/load_student_data_form_json', as: :lsdfj
+
+  post 'admin/load_student_data_from_json_commit', as: :lsdfjc
+
   resources :perform_data
   resources :order_lines
   resources :students

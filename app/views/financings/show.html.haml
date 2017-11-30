@@ -1,21 +1,21 @@
 %p#notice= notice
 
 %p
-  %b Name financing:
+  %b Источник финансирования:
   = @financing.name_financing
 %p
-  %b Suum:
+  %b Сумма финансирования:
   = @financing.suum
 %p
-  %b Faculty:
+  %b Факультет:
   = @financing.faculty
 %p
-  %b Scholarship period:
+  %b Период выплаты стипендии:
   = @financing.scholarship_period
 %p
-  %b Type scholarship:
+  %b Вид стипендии:
   = @financing.type_scholarship_id
 
-= link_to 'Edit', edit_financing_path(@financing)
+= link_to 'Редактировать', edit_financing_path(@financing)
 \|
-= link_to 'Back', financings_path
+= link_to 'Назад', financings_path

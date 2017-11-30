@@ -1,13 +1,13 @@
-%h1 Listing financings
+%h1 Список источников финансирования
 
 %table
   %thead
     %tr
-      %th Name financing
-      %th Suum
-      %th Faculty
-      %th Scholarship period
-      %th Type scholarship
+      %th Название источника финансирования
+      %th Сумма финансирования
+      %th Факультет
+      %th Период выплаты стипендии
+      %th Вид стипендии
       %th
       %th
       %th
@@ -20,10 +20,10 @@
         %td= financing.faculty
         %td= financing.scholarship_period
         %td= financing.type_scholarship_id
-        %td= link_to 'Show', financing
-        %td= link_to 'Edit', edit_financing_path(financing)
-        %td= link_to 'Destroy', financing, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Показать', financing
+        %td= link_to 'Редактировать', edit_financing_path(financing)
+        %td= link_to 'Удалить', financing, method: :delete, data: { confirm: 'Вы уверены?' }
 
 %br
 
-= link_to 'New Financing', new_financing_path
+= link_to 'Создать источник финансирования', new_financing_path

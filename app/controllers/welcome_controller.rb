@@ -10,4 +10,9 @@ class WelcomeController < ApplicationController
     @current_user_login = @current_user_object.email
     @current_role_user = RoleUser.find(params['bad_user_role'])
   end
+
+  def load_from_json
+    je = JsonExample.test()
+    raise je.inspect
+  end
 end

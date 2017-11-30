@@ -1,0 +1,5 @@
+%h1 Импорт данных из json
+-#поле выбора файла
+=form_tag lsdfjc_path(), {multipart: true} do
+  =file_field_tag(:jsonfile)
+  =submit_tag("загрузить")

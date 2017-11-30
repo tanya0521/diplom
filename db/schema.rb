@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20171013203335) do
 
   create_table "faculties", force: :cascade do |t|
     t.text     "namef",      null: false
-    t.integer  "group_id"
+    t.integer  "group_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_faculties_on_group_id", using: :btree
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20171013203335) do
   create_table "financings", force: :cascade do |t|
     t.text     "name_financing",        null: false
     t.integer  "suum",                  null: false
-    t.integer  "faculty_id"
-    t.integer  "scholarship_period_id"
-    t.integer  "type_scholarship_id"
+    t.integer  "faculty_id",            null: false
+    t.integer  "scholarship_period_id", null: false
+    t.integer  "type_scholarship_id",   null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.index ["faculty_id"], name: "index_financings_on_faculty_id", using: :btree

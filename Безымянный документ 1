@@ -1,0 +1,15 @@
+Scholarship_period.destroy_all; Type_scholarship.destroy_all; Order.destroy_all; Group.destroy_all; Faculty.destroy_all; Finansing.destroy_all; Student.destroy_all; Order_line.destroy_all; Perform_datum.destroy_all; 
+n = 10
+for i in 0 ... n do
+  Scholarship_period.create(begin: Date.today, end: Date.today)
+  Typescholarship.create(name_financing: "name_financing" + i.to_s, typescholarship: "typescholarship" + i.to_s)
+  Order.create(number: "number" + i.to_s)
+  Group.create(numberg: "numberg" + i.to_s)
+  Faculty.create(namef: "namef" + i.to_s)
+  Financing.create(name_financing: "name_financing" + i.to_s, suum: "suum" + i.to_s)
+  Student.create(fn: "fn" + i.to_s, sn: "sn" + i.to_s, ln: "ln" + i.to_s, birthday: "birthday" + i.to_s, course: "course" + i.to_s)
+  Order_line.create(namelo: "namelo" + i.to_s)
+  Perform_datum.create(quantity5: "quantity5" + i.to_s, quantity4: "quantity4" + i.to_s, quantity3: "quantity3" + i.to_s, quantity2: "quantity2" + i.to_s) 
+  
+end
+

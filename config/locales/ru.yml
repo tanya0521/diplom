@@ -1,0 +1,21 @@
+ru:
+  app:
+    name: Система учета и контроля стипендиального обеспечения вуза
+    company:
+      short_name:  МПУ
+      department: Кафедра "Прикладная информатика"
+  helpers:
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+
+  views:
+    pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …
+  activerecord:
+   
