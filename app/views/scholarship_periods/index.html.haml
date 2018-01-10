@@ -1,10 +1,12 @@
-%h1 Listing scholarship_periods
+%h1 Период начисления стипендии
 
-%table
+= link_to 'Внести новый период начисления стипендии', new_scholarship_period_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Begin
-      %th End
+      %th Начало
+      %th Окончание
       %th
       %th
       %th
@@ -14,10 +16,9 @@
       %tr
         %td= scholarship_period.begin
         %td= scholarship_period.end
-        %td= link_to 'Show', scholarship_period
-        %td= link_to 'Edit', edit_scholarship_period_path(scholarship_period)
-        %td= link_to 'Destroy', scholarship_period, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Показать', scholarship_period, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_scholarship_period_path(scholarship_period), class: "btn btn-warning"
+        %td= link_to 'Удалить', scholarship_period, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Scholarship period', new_scholarship_period_path

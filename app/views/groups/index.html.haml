@@ -1,9 +1,11 @@
-%h1 Listing groups
+%h1 Группы
 
-%table
+= link_to 'Добавить группу', new_group_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Numberg
+      %th Номер
       %th
       %th
       %th
@@ -12,10 +14,9 @@
     - @groups.each do |group|
       %tr
         %td= group.numberg
-        %td= link_to 'Show', group
-        %td= link_to 'Edit', edit_group_path(group)
-        %td= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Показать', group, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_group_path(group), class: "btn btn-warning"
+        %td= link_to 'Удалить', group, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Group', new_group_path

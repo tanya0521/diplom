@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  has_many :faculties
+  belongs_to :faculty
   has_many :students
 
   validates :numberg, presence: true

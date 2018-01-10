@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Namef:
+  %b Название:
   = @faculty.namef
 %p
-  %b Group:
-  = @faculty.group
+  %b Группа:
+  = @faculty.groups
 
-= link_to 'Edit', edit_faculty_path(@faculty)
+= link_to 'Редактировать', edit_faculty_path(@faculty), class: "btn btn-warning"
 \|
-= link_to 'Back', faculties_path
+= link_to 'Назад', faculties_path, class: "btn btn-primary"

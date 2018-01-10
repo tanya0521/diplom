@@ -6,14 +6,24 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :password
-    = f.text_field :password
-  .field
-    = f.label :password_confirmation
-    = f.text_field :password_confirmation
+  .row
+    .col-md-6
+      .form-group
+        = f.label :email
+        = f.text_field :email
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Пароль"
+        = f.text_field :password
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Подтверждение пароля"
+        = f.text_field :password_confirmation
+  .row
+    .col-md-6
+      .form-group
   .actions
-    = f.submit 'Save'
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"

@@ -28,7 +28,7 @@ class PerformDataController < ApplicationController
 
     respond_to do |format|
       if @perform_datum.save
-        format.html { redirect_to @perform_datum, notice: 'Perform datum was successfully created.' }
+        format.html { redirect_to @perform_datum, notice: 'Данные об успеваемости успешно созданы.' }
         format.json { render :show, status: :created, location: @perform_datum }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PerformDataController < ApplicationController
   def update
     respond_to do |format|
       if @perform_datum.update(perform_datum_params)
-        format.html { redirect_to @perform_datum, notice: 'Perform datum was successfully updated.' }
+        format.html { redirect_to @perform_datum, notice: 'Данные об успеваемости успешно отредактированы.' }
         format.json { render :show, status: :ok, location: @perform_datum }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PerformDataController < ApplicationController
   def destroy
     @perform_datum.destroy
     respond_to do |format|
-      format.html { redirect_to perform_data_url, notice: 'Perform datum was successfully destroyed.' }
+      format.html { redirect_to perform_data_url, notice: 'Данные об успеваемости успешно удалены.' }
       format.json { head :no_content }
     end
   end

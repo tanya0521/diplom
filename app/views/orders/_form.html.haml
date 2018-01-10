@@ -6,8 +6,15 @@
         - @order.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :number
-    = f.text_field :number
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Номер"
+        = f.text_field :number, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад',orders_path, class: "btn btn-primary"

@@ -1,27 +1,27 @@
 %p#notice= notice
 
 %p
-  %b Fn:
+  %b Имя:
   = @student.fn
 %p
-  %b Sn:
+  %b Фамилия:
   = @student.sn
 %p
-  %b Ln:
+  %b Отчество:
   = @student.ln
 %p
-  %b Birthday:
+  %b День рождения:
   = @student.birthday
 %p
-  %b Course:
+  %b Курс:
   = @student.course
 %p
-  %b Faculty:
+  %b Факультет:
   = @student.faculty
 %p
-  %b Group:
+  %b Группа:
   = @student.group
 
-= link_to 'Edit', edit_student_path(@student)
+= link_to 'Редактирвание', edit_student_path(@student), class: "btn btn-warning"
 \|
-= link_to 'Back', students_path
+= link_to 'Назад', students_path, class: "btn btn-primary"

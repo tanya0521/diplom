@@ -6,11 +6,21 @@
         - @scholarship_period.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :begin
-    = f.date_select :begin
-  .field
-    = f.label :end
-    = f.date_select :end
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Начало"
+        = f.date_select :begin, class: 'form-control'
+        = f.error_messages_for(:begin)
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Окончание"
+        = f.date_select :end, class: 'form-control'
+        = f.error_messages_for(:end)
+  .row
+    .col-md-6
+      .form-group
+        = f.submit 'Сохранить', class: "btn btn-success"
+        \|
+        = link_to 'Назад', scholarship_periods_path, class: "btn btn-primary"

@@ -4,12 +4,12 @@
   %b Email:
   = @user.email
 %p
-  %b Crypted password:
+  %b Зашифрованный пароль:
   = @user.crypted_password
 %p
   %b Salt:
   = @user.salt
 
-= link_to 'Edit', edit_user_path(@user)
+= link_to 'Редактировать', edit_user_path(@user), class: "btn btn-warning"
 \|
-= link_to 'Back', users_path
+= link_to 'Назад', users_path, class: "btn btn-primary"

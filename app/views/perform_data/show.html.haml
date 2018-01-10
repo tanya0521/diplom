@@ -1,24 +1,24 @@
 %p#notice= notice
 
 %p
-  %b Quantity5:
+  %b Количество 5:
   = @perform_datum.quantity5
 %p
-  %b Quantity4:
+  %b Количество 4:
   = @perform_datum.quantity4
 %p
-  %b Quantity3:
+  %b Количество 3:
   = @perform_datum.quantity3
 %p
-  %b Quantity2:
+  %b Количество 2:
   = @perform_datum.quantity2
 %p
-  %b Student:
+  %b Студент:
   = @perform_datum.student
 %p
-  %b Scholarship period:
+  %b Период начислений стипендий:
   = @perform_datum.scholarship_period
 
-= link_to 'Edit', edit_perform_datum_path(@perform_datum)
+= link_to 'Редактировать', edit_perform_datum_path(@perform_datum), class: "btn btn-warning"
 \|
-= link_to 'Back', perform_data_path
+= link_to 'Назад', perform_data_path, class: "btn btn-primary"

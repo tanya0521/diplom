@@ -1,10 +1,12 @@
-%h1 Listing faculties
+%h1 Факультеты
 
-%table
+= link_to 'Создать факультет', new_faculty_path, class: "btn btn-primary"
+
+%table.table.table-hover
   %thead
     %tr
-      %th Namef
-      %th Group
+      %th Название
+      %th Группа
       %th
       %th
       %th
@@ -13,11 +15,10 @@
     - @faculties.each do |faculty|
       %tr
         %td= faculty.namef
-        %td= faculty.group
-        %td= link_to 'Show', faculty
-        %td= link_to 'Edit', edit_faculty_path(faculty)
-        %td= link_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= faculty.groups.map{|gr|gr.numberg}.join(", ")
+        %td= link_to 'Показать', faculty, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_faculty_path(faculty), class: "btn btn-warning"
+        %td= link_to 'Удалить', faculty, method: :delete, data: { confirm: 'Вы уверены??' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Faculty', new_faculty_path

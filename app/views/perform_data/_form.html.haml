@@ -6,23 +6,40 @@
         - @perform_datum.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :quantity5
-    = f.number_field :quantity5
-  .field
-    = f.label :quantity4
-    = f.number_field :quantity4
-  .field
-    = f.label :quantity3
-    = f.number_field :quantity3
-  .field
-    = f.label :quantity2
-    = f.number_field :quantity2
-  .field
-    = f.label :student
-    = f.text_field :student
-  .field
-    = f.label :scholarship_period
-    = f.text_field :scholarship_period
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Количество 5"
+        = f.number_field :quantity5, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Количество 4"
+        = f.number_field :quantity4, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Количество 3"
+        = f.number_field :quantity3, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Количество 2"
+        = f.number_field :quantity2, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Студент"
+        = f.text_field :student_id, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Период стипендии"
+        = f.text_field :scholarship_period_id, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', perform_data_path, class: "btn btn-primary"

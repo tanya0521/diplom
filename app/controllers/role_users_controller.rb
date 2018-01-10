@@ -28,7 +28,7 @@ class RoleUsersController < ApplicationController
 
     respond_to do |format|
       if @role_user.save
-        format.html { redirect_to @role_user, notice: 'Role user was successfully created.' }
+        format.html { redirect_to @role_user, notice: 'Роль пользователя успешно создан.' }
         format.json { render :show, status: :created, location: @role_user }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RoleUsersController < ApplicationController
   def update
     respond_to do |format|
       if @role_user.update(role_user_params)
-        format.html { redirect_to @role_user, notice: 'Role user was successfully updated.' }
+        format.html { redirect_to @role_user, notice: 'Роль пользователя успешно отредактирован.' }
         format.json { render :show, status: :ok, location: @role_user }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RoleUsersController < ApplicationController
   def destroy
     @role_user.destroy
     respond_to do |format|
-      format.html { redirect_to role_users_url, notice: 'Role user was successfully destroyed.' }
+      format.html { redirect_to role_users_url, notice: 'Роль пользователя успешно удален.' }
       format.json { head :no_content }
     end
   end

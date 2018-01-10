@@ -1,9 +1,9 @@
 %p#notice= notice
 
 %p
-  %b Number:
+  %b Номер:
   = @order.number
 
-= link_to 'Edit', edit_order_path(@order)
+= link_to 'Редактировать', edit_order_path(@order), class: "btn btn-warning"
 \|
-= link_to 'Back', orders_path
+= link_to 'Назад', orders_path, class: "btn btn-primary"

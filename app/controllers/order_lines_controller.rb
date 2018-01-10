@@ -28,7 +28,7 @@ class OrderLinesController < ApplicationController
 
     respond_to do |format|
       if @order_line.save
-        format.html { redirect_to @order_line, notice: 'Order line was successfully created.' }
+        format.html { redirect_to @order_line, notice: 'Строка приказа успешно создана.' }
         format.json { render :show, status: :created, location: @order_line }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class OrderLinesController < ApplicationController
   def update
     respond_to do |format|
       if @order_line.update(order_line_params)
-        format.html { redirect_to @order_line, notice: 'Order line was successfully updated.' }
+        format.html { redirect_to @order_line, notice: 'Строка приказа успешно отредактирована.' }
         format.json { render :show, status: :ok, location: @order_line }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class OrderLinesController < ApplicationController
   def destroy
     @order_line.destroy
     respond_to do |format|
-      format.html { redirect_to order_lines_url, notice: 'Order line was successfully destroyed.' }
+      format.html { redirect_to order_lines_url, notice: 'Строка приказа успешно удалена.' }
       format.json { head :no_content }
     end
   end

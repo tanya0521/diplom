@@ -1,10 +1,12 @@
-%h1 Listing users
+%h1 Пользователи
 
-%table
+= link_to 'Добавить пользователя', new_user_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
       %th Email
-      %th Crypted password
+      %th Зашифрованный пароль
       %th Salt
       %th
       %th
@@ -16,10 +18,10 @@
         %td= user.email
         %td= user.crypted_password
         %td= user.salt
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', user, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_user_path(user), class: "btn btn-warning"
+        %td= link_to 'Удалить', user, :method => :delete, :data => { :confirm => 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New User', new_user_path
+

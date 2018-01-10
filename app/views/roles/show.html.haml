@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b Название:
   = @role.name
 %p
-  %b Info:
+  %b Информация:
   = @role.info
 %p
-  %b Full info:
+  %b Полная информация:
   = @role.full_info
 
-= link_to 'Edit', edit_role_path(@role)
+= link_to 'Редактировать', edit_role_path(@role), class: "btn btn-warning"
 \|
-= link_to 'Back', roles_path
+= link_to 'Назад', roles_path, class: "btn btn-primary"

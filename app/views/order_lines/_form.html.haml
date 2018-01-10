@@ -6,26 +6,42 @@
         - @order_line.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :begin_date
-    = f.text_area :begin_date
-  .field
-    = f.label :end_date
-    = f.text_area :end_date
-  .field
-    = f.label :scholarship
-    = f.text_area :scholarship
-  .field
-    = f.label :student
-    = f.text_field :student
-  .field
-    = f.label :order
-    = f.text_field :order
-  .field
-    = f.label :scholarship_period
-    = f.text_field :scholarship_period
-  .field
-    = f.label :type_scholarship
-    = f.text_field :type_scholarship
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Начало"
+        = f.text_area :begin_date, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Окончание"
+        = f.text_area :end_date, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Стипендия"
+        = f.text_area :scholarship, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Студент"
+        = f.text_field :student, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Приказ"
+        = f.text_field :order, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Период начисления стипендии"
+        = f.text_field :scholarship_period, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Тип стипендии"
+        = f.text_field :type_scholarship, class: 'form-control'
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', order_lines_path, class: "btn btn-primary"

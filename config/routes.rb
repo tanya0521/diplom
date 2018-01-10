@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :type_scholarships
   resources :scholarship_periods
   resources :role_users
+  resources :admin
   get 'welcome/index', as: :index 
   get 'welcome/insufficient_privileges', as: :ip
 

@@ -1,15 +1,17 @@
-%h1 Listing order_lines
+%h1 Добавить строку приказа
 
-%table
+= link_to 'Добавить строку приказа', new_order_line_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Begin_date
-      %th End_date
-      %th scholarship
-      %th Student
-      %th Order
-      %th Scholarship period
-      %th Type scholarship
+      %th Начало
+      %th Окончание
+      %th Стипендия
+      %th Студент
+      %th Приказ
+      %th Период выплаты стипендий
+      %th Тип стипендии
       %th
       %th
       %th
@@ -24,10 +26,9 @@
         %td= order_line.order
         %td= order_line.scholarship_period
         %td= order_line.type_scholarship
-        %td= link_to 'Show', order_line
-        %td= link_to 'Edit', edit_order_line_path(order_line)
-        %td= link_to 'Destroy', order_line, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Показать', order_line, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_order_line_path(order_line), class: "btn btn-warning"
+        %td= link_to 'Удалить', order_line, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Order line', new_order_line_path

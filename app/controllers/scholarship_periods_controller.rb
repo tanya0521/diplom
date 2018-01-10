@@ -28,7 +28,7 @@ class ScholarshipPeriodsController < ApplicationController
 
     respond_to do |format|
       if @scholarship_period.save
-        format.html { redirect_to @scholarship_period, notice: 'Scholarship period was successfully created.' }
+        format.html { redirect_to @scholarship_period, notice: 'Период степендии успешно создан.' }
         format.json { render :show, status: :created, location: @scholarship_period }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ScholarshipPeriodsController < ApplicationController
   def update
     respond_to do |format|
       if @scholarship_period.update(scholarship_period_params)
-        format.html { redirect_to @scholarship_period, notice: 'Scholarship period was successfully updated.' }
+        format.html { redirect_to @scholarship_period, notice: 'Период степендии успешно отредактирован.' }
         format.json { render :show, status: :ok, location: @scholarship_period }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ScholarshipPeriodsController < ApplicationController
   def destroy
     @scholarship_period.destroy
     respond_to do |format|
-      format.html { redirect_to scholarship_periods_url, notice: 'Scholarship period was successfully destroyed.' }
+      format.html { redirect_to scholarship_periods_url, notice: 'Период степендии успешно удален.' }
       format.json { head :no_content }
     end
   end

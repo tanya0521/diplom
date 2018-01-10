@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Begin:
+  %b Начало:
   = @scholarship_period.begin
 %p
-  %b End:
+  %b Окончание:
   = @scholarship_period.end
 
-= link_to 'Edit', edit_scholarship_period_path(@scholarship_period)
+= link_to 'Редактировать', edit_scholarship_period_path(@scholarship_period), class: "btn btn-warning"
 \|
-= link_to 'Back', scholarship_periods_path
+= link_to 'Назад', scholarship_periods_path, class: "btn btn-primary"

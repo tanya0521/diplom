@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Name financing:
+  %b Наименование финансирования:
   = @type_scholarship.name_financing
 %p
-  %b Typescholarship:
+  %b Тип стипендии:
   = @type_scholarship.typescholarship
 
-= link_to 'Edit', edit_type_scholarship_path(@type_scholarship)
+= link_to 'Редактировать', edit_type_scholarship_path(@type_scholarship), class: "btn btn-warning"
 \|
-= link_to 'Back', type_scholarships_path
+= link_to 'Назад', type_scholarships_path, class: "btn btn-primary"

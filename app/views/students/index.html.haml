@@ -1,15 +1,17 @@
-%h1 Listing students
+%h1 Студенты
 
-%table
+= link_to 'Добавить студента', new_student_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Fn
-      %th Sn
-      %th Ln
-      %th Birthday
-      %th Course
-      %th Faculty
-      %th Group
+      %th Имя
+      %th Фамилия
+      %th Отчество
+      %th День рождения
+      %th Курс
+      %th Факультет
+      %th Группа
       %th
       %th
       %th
@@ -22,12 +24,13 @@
         %td= student.ln
         %td= student.birthday
         %td= student.course
-        %td= student.faculty
-        %td= student.group
-        %td= link_to 'Show', student
-        %td= link_to 'Edit', edit_student_path(student)
-        %td= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }
+        %td 
+          = student.faculty.namef
+        %td
+          = student.group.numberg
+        %td= link_to 'Показать', student, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_student_path(student), class: "btn btn-warning"
+        %td= link_to 'Удалить', student, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Student', new_student_path

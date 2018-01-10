@@ -1,14 +1,16 @@
-%h1 Listing perform_data
+%h1 Информация об успеваемости
 
-%table
+= link_to 'Добавить информацию об успеваемости', new_perform_datum_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Quantity5
-      %th Quantity4
-      %th Quantity3
-      %th Quantity2
-      %th Student
-      %th Scholarship period
+      %th Количество 5
+      %th Количество 4
+      %th Количество 3
+      %th Количество 2
+      %th Студент
+      %th Период начисления стипендий
       %th
       %th
       %th
@@ -20,12 +22,16 @@
         %td= perform_datum.quantity4
         %td= perform_datum.quantity3
         %td= perform_datum.quantity2
-        %td= perform_datum.student
-        %td= perform_datum.scholarship_period
-        %td= link_to 'Show', perform_datum
-        %td= link_to 'Edit', edit_perform_datum_path(perform_datum)
-        %td= link_to 'Destroy', perform_datum, method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          = perform_datum.student.sn
+          = perform_datum.student.fn
+          = perform_datum.student.ln 
+        %td
+          = l(perform_datum.scholarship_period.begin)
+          = l(perform_datum.scholarship_period.end)
+        %td= link_to 'Показать', perform_datum, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_perform_datum_path(perform_datum), class: "btn btn-warning"
+        %td= link_to 'Удалить', perform_datum, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Perform datum', new_perform_datum_path

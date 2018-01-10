@@ -6,26 +6,45 @@
         - @student.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :fn
-    = f.text_area :fn
-  .field
-    = f.label :sn
-    = f.text_area :sn
-  .field
-    = f.label :ln
-    = f.text_area :ln
-  .field
-    = f.label :birthday
-    = f.text_field :birthday
-  .field
-    = f.label :course
-    = f.number_field :course
-  .field
-    = f.label :faculty
-    = f.text_field :faculty
-  .field
-    = f.label :group
-    = f.text_field :group
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Имя"
+        = f.text_area :fn, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Фамилия"
+        = f.text_area :sn, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Отчество"
+        = f.text_area :ln, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"День рождения"
+        = f.text_field :birthday, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Курс"
+        = f.number_field :course, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Факультет"
+        = f.text_field :faculty, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Группа"
+        = f.text_field :group, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', students_path, class: "btn btn-primary"

@@ -6,11 +6,20 @@
         - @type_scholarship.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :name_financing
-    = f.text_area :name_financing
-  .field
-    = f.label :typescholarship
-    = f.text_area :typescholarship
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Наименование финансирования"
+        = f.text_area :name_financing, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Тип стипендии"
+        = f.text_area :typescholarship, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', type_scholarships_path, class: "btn btn-primary"

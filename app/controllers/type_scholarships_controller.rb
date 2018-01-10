@@ -28,7 +28,7 @@ class TypeScholarshipsController < ApplicationController
 
     respond_to do |format|
       if @type_scholarship.save
-        format.html { redirect_to @type_scholarship, notice: 'Type scholarship was successfully created.' }
+        format.html { redirect_to @type_scholarship, notice: 'Тип степендии успешно создан.' }
         format.json { render :show, status: :created, location: @type_scholarship }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TypeScholarshipsController < ApplicationController
   def update
     respond_to do |format|
       if @type_scholarship.update(type_scholarship_params)
-        format.html { redirect_to @type_scholarship, notice: 'Type scholarship was successfully updated.' }
+        format.html { redirect_to @type_scholarship, notice: 'Тип степендии успешно отредактирован.' }
         format.json { render :show, status: :ok, location: @type_scholarship }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TypeScholarshipsController < ApplicationController
   def destroy
     @type_scholarship.destroy
     respond_to do |format|
-      format.html { redirect_to type_scholarships_url, notice: 'Type scholarship was successfully destroyed.' }
+      format.html { redirect_to type_scholarships_url, notice: 'Тип степендии успешно удален.' }
       format.json { head :no_content }
     end
   end

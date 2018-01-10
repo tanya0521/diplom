@@ -1,10 +1,12 @@
-%h1 Listing type_scholarships
+%h1 Тип стипендий
 
-%table
+= link_to 'Новый тип стипендии', new_type_scholarship_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Name financing
-      %th Typescholarship
+      %th Наименование финансирования
+      %th Тип стипендии
       %th
       %th
       %th
@@ -14,10 +16,10 @@
       %tr
         %td= type_scholarship.name_financing
         %td= type_scholarship.typescholarship
-        %td= link_to 'Show', type_scholarship
-        %td= link_to 'Edit', edit_type_scholarship_path(type_scholarship)
-        %td= link_to 'Destroy', type_scholarship, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Показть', type_scholarship, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_type_scholarship_path(type_scholarship), class: "btn btn-warning"
+        %td= link_to 'Удалить', type_scholarship, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+
 
 %br
 
-= link_to 'New Type scholarship', new_type_scholarship_path

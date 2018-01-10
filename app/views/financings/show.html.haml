@@ -16,6 +16,6 @@
   %b Вид стипендии:
   = @financing.type_scholarship_id
 
-= link_to 'Редактировать', edit_financing_path(@financing)
+= link_to 'Редактировать', edit_financing_path(@financing), class: "btn btn-warning"
 \|
-= link_to 'Назад', financings_path
+= link_to 'Назад', financings_path, class: "btn btn-primary"

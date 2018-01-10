@@ -1,11 +1,13 @@
-%h1 Listing roles
+%h1 Роли
 
-%table
+= link_to 'Добавить роль', new_role_path, class: "btn btn-primary"
+
+%table.table
   %thead
     %tr
-      %th Name
-      %th Info
-      %th Full info
+      %th Название
+      %th Информация
+      %th Полная информация
       %th
       %th
       %th
@@ -16,10 +18,9 @@
         %td= role.name
         %td= role.info
         %td= role.full_info
-        %td= link_to 'Show', role
-        %td= link_to 'Edit', edit_role_path(role)
-        %td= link_to 'Destroy', role, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', role, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_role_path(role), class: "btn btn-warning"
+        %td= link_to 'Удалить', role, :method => :delete, :data => { :confirm => 'Вы уверены?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Role', new_role_path

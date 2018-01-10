@@ -15,18 +15,41 @@ module SideBarHelper
          :controller => :users, :action => :index,
          :icon => 'file-text-o',
          :class => 'long'},
-        {:name => 'Добавление',
-         :controller => :users, :action => :new,
-         :icon => 'user-plus'},
-        {:name => 'Информация о финансировании', :controller => :financings,
-         :action => :index, :icon => 'file-text-o',
-         :class => 'long'},
-        {:name => 'Добавление', :controller => :financings,
-         :action => :new, :icon => 'plus'},
         {:name => 'Роли', :controller => :roles,
-         :action => :index, :icon => 'file-text-o'},
-        {:name => 'Добавить роль', :controller => :roles,
-         :action => :new, :icon => 'plus'}
+         :action => :index, :icon => 'info'},
+        {:name => 'Финансирование', :controller => :financings,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Приказы', :controller => :orders,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Студенты', :controller => :students,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Факультеты', :controller => :faculties,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Группы', :controller => :groups,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Строки приказов', :controller => :order_lines,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Виды стипедий', :controller => :type_scholarships,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Периоды стипендий', :controller => :scholarship_periods,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Успеваемость', :controller => :perform_data,
+         :action => :index, :icon => 'info',
+         :class => 'long'},
+        {:name => 'Основной импорт', 
+         :controller => :admin, :action => :load_student_data_form_json, 
+         :icon => 'pencil-square-o'},
+        {:name => 'Импорт периодов', 
+         :controller => :admin, :action => :load_term_data_form_json, 
+         :icon => 'calendar-plus-o'}
      ]}
    else
      if ru.is_operator?
@@ -48,7 +71,7 @@ module SideBarHelper
 
   def is_open?(ctr, act)
     case ctr.to_s
-    when 'users', 'roles'
+    when 'users', 'roles', 'admin', 'financings', 'orders', 'students',  'faculties' ,'groups', 'order_lines', 'type_scholarships', 'scholarship_periods', 'perform_data'
       ctr.to_s == controller_name.to_s
     else
       false

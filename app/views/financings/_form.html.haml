@@ -1,25 +1,48 @@
 = form_for @financing do |f|
   - if @financing.errors.any?
     #error_explanation
+
       %h2= "#{pluralize(@financing.errors.count, "error")} prohibited this financing from being saved:"
       %ul
         - @financing.errors.full_messages.each do |message|
           %li= message
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Название финансирования"
+        = f.text_area :name_financing, class: 'form-control'
+        = f.error_messages_for(:name_finansing)
+  .row
+    .col-md-6 
+      .form-group
+        = f.label :"Сумма"
+        = f.number_field :suum, class: 'form-control'
+        = f.error_messages_for(:suum)
+  .row
+    .col-md-6
+      .form-group
+        = f.label :"Факультет"
+        = f.text_field :faculty, class: 'form-control'
+        = f.error_messages_for(:faculty)
+  .row
+    .col-md-6 
+      .form-group
+        = f.label :"Период начисления стипендий"
+        = f.number_field :scholarship_period, class: 'form-control'
+        = f.error_messages_for(:scholarship_period)
+  .row
+    .col-md-6 
+      .form-group
+        = f.label :"Вид стипендии"
+        = f.text_field :type_scholarship_id, class: 'form-control'
+        = f.error_messages_for(:type_scholarship_id)
+  .row
+    .col-md-6 
+      .form-group
+  .form-actions
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', financings_path, class: "btn btn-primary"
 
-  .field
-    = f.label :name_financing
-    = f.text_area :name_financing
-  .field
-    = f.label :suum
-    = f.number_field :suum
-  .field
-    = f.label :faculty
-    = f.text_field :faculty
-  .field
-    = f.label :scholarship_period
-    = f.text_field :scholarship_period
-  .field
-    = f.label :type_scholarship
-    = f.text_field :type_scholarship_id
-  .actions
-    = f.submit 'Сохранить'
+    
+
