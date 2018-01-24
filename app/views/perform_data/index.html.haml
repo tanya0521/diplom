@@ -2,15 +2,19 @@
 
 = link_to 'Добавить информацию об успеваемости', new_perform_datum_path, class: "btn btn-primary"
 
-%table.table
+%table.table-hover.table-condensed
   %thead
     %tr
-      %th Количество 5
-      %th Количество 4
-      %th Количество 3
-      %th Количество 2
-      %th Студент
-      %th Период начисления стипендий
+      %th.tbl-width65.text-center
+        Кол-во 5-к
+      %th.tbl-width65.text-center
+        Кол-во 4-к
+      %th.tbl-width65.text-center 
+        Кол-во 3-к
+      %th.tbl-width65.text-center 
+        Кол-во 2-к
+      %th.tbl-width65.text-center Студент
+      %th.tbl-width65.text-center Период начисления стипендий
       %th
       %th
       %th
@@ -18,16 +22,17 @@
   %tbody
     - @perform_data.each do |perform_datum|
       %tr
-        %td= perform_datum.quantity5
-        %td= perform_datum.quantity4
-        %td= perform_datum.quantity3
-        %td= perform_datum.quantity2
-        %td
+        %td.tbl-width65.text-center= perform_datum.quantity5
+        %td.tbl-width65.text-center= perform_datum.quantity4
+        %td.tbl-width65.text-center= perform_datum.quantity3
+        %td.tbl-width65.text-center= perform_datum.quantity2
+        %td.tbl-width65.text-center
           = perform_datum.student.sn
           = perform_datum.student.fn
           = perform_datum.student.ln 
-        %td
+        %td.tbl-width65.text-center
           = l(perform_datum.scholarship_period.begin)
+          \-
           = l(perform_datum.scholarship_period.end)
         %td= link_to 'Показать', perform_datum, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_perform_datum_path(perform_datum), class: "btn btn-warning"

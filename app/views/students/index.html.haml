@@ -2,16 +2,16 @@
 
 = link_to 'Добавить студента', new_student_path, class: "btn btn-primary"
 
-%table.table
+%table.table-hover.table-condensed
   %thead
     %tr
-      %th Имя
-      %th Фамилия
-      %th Отчество
-      %th День рождения
-      %th Курс
-      %th Факультет
-      %th Группа
+      %th.tbl-width65.text-center Имя
+      %th.tbl-width65.text-center Фамилия
+      %th.tbl-width65.text-center Отчество
+      %th.tbl-width65.text-center День рождения
+      %th.tbl-width65.text-center Курс
+      %th.tbl-width65.text-center Факультет
+      %th.tbl-width65.text-center Группа
       %th
       %th
       %th
@@ -19,14 +19,14 @@
   %tbody
     - @students.each do |student|
       %tr
-        %td= student.fn
-        %td= student.sn
-        %td= student.ln
-        %td= student.birthday
-        %td= student.course
-        %td 
+        %td.tbl-width65.text-center= student.fn
+        %td.tbl-width65.text-center= student.sn
+        %td.tbl-width65.text-center= student.ln
+        %td.tbl-width65.text-center= student.birthday
+        %td.tbl-width65.text-center= student.course
+        %td.tbl-width65.text-center 
           = student.faculty.namef
-        %td
+        %td.tbl-width65.text-center
           = student.group.numberg
         %td= link_to 'Показать', student, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_student_path(student), class: "btn btn-warning"

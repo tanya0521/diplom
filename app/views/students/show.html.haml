@@ -5,10 +5,10 @@
   = @student.fn
 %p
   %b Фамилия:
-  = @student.sn
+  = @student.ln
 %p
   %b Отчество:
-  = @student.ln
+  = @student.sn
 %p
   %b День рождения:
   = @student.birthday
@@ -17,10 +17,15 @@
   = @student.course
 %p
   %b Факультет:
-  = @student.faculty
+  = @student.faculty.namef
 %p
   %b Группа:
-  = @student.group
+  = @student.group.numberg
+%p
+  %b Стипендии:
+  - @student.order_lines.each do |ol|
+    = ol.beginning_date
+    %br
 
 = link_to 'Редактирвание', edit_student_path(@student), class: "btn btn-warning"
 \|

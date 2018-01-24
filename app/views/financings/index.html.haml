@@ -2,14 +2,14 @@
 
 = link_to 'Добавить источник финансирования', new_financing_path, class: "btn btn-primary"
 
-%table.table
+%table.table-hover.table-condensed
   %thead
     %tr
-      %th Название источника финансирования
-      %th Сумма финансирования
-      %th Факультет
-      %th Период выплаты стипендии
-      %th Вид стипендии
+      %th.tbl-width65.text-center Название источника финансирования
+      %th.tbl-width65.text-center Сумма финансирования
+      %th.tbl-width65.text-center Факультет
+      %th.tbl-width65.text-center Период выплаты стипендии
+      %th.tbl-width65.text-center Вид стипендии
       %th
       %th
       %th
@@ -17,11 +17,11 @@
   %tbody
     - @financings.each do |financing|
       %tr
-        %td= financing.name_financing
-        %td= financing.suum
-        %td= financing.faculty
-        %td= financing.scholarship_period
-        %td= financing.type_scholarship_id
+        %td.tbl-width65.text-center= financing.name_financing
+        %td.tbl-width65.text-center= financing.suum
+        %td.tbl-width65.text-center= financing.faculty
+        %td.tbl-width65.text-center= financing.scholarship_period
+        %td.tbl-width65.text-center= financing.type_scholarship_id
         %td= link_to 'Показать', financing, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_financing_path(financing), class: "btn btn-warning"
         %td= link_to 'Удалить', financing, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"

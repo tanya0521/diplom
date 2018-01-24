@@ -14,10 +14,14 @@
   = @perform_datum.quantity2
 %p
   %b Студент:
-  = @perform_datum.student
+  = @perform_datum.student.ln
+  = @perform_datum.student.fn
+  = @perform_datum.student.sn
 %p
   %b Период начислений стипендий:
-  = @perform_datum.scholarship_period
+  = @perform_datum.scholarship_period.begin
+  \-
+  = @perform_datum.scholarship_period.end
 
 = link_to 'Редактировать', edit_perform_datum_path(@perform_datum), class: "btn btn-warning"
 \|

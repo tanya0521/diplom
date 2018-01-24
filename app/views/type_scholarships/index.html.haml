@@ -2,11 +2,11 @@
 
 = link_to 'Новый тип стипендии', new_type_scholarship_path, class: "btn btn-primary"
 
-%table.table
+%table.table-hover.table-condensed
   %thead
     %tr
-      %th Наименование финансирования
-      %th Тип стипендии
+      %th.tbl-width65.text-center Финансирование
+      %th.tbl-width65.text-center Тип стипендии
       %th
       %th
       %th
@@ -14,9 +14,9 @@
   %tbody
     - @type_scholarships.each do |type_scholarship|
       %tr
-        %td= type_scholarship.name_financing
-        %td= type_scholarship.typescholarship
-        %td= link_to 'Показть', type_scholarship, class: "btn btn-primary"
+        %td.tbl-width65.text-center= type_scholarship.name_financing
+        %td.tbl-width65.text-center= type_scholarship.typescholarship
+        %td= link_to 'Показать', type_scholarship, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_type_scholarship_path(type_scholarship), class: "btn btn-warning"
         %td= link_to 'Удалить', type_scholarship, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 

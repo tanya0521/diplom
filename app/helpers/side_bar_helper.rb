@@ -7,62 +7,105 @@ module SideBarHelper
         :icon => 'financing'}
       else
     if ru.is_admin?
-       result << {
+      result << {
         :name => 'Администрирование',
         :icon => 'key',
         :children => [
         {:name => 'Пользователи',
-         :controller => :users, :action => :index,
-         :icon => 'file-text-o',
-         :class => 'long'},
+        :controller => :users, :action => :index,
+        :icon => 'file-text-o',
+        :class => 'long'},
         {:name => 'Роли', :controller => :roles,
-         :action => :index, :icon => 'info'},
+        :action => :index, :icon => 'info'}
+      ]}
+      result << {
+        :name => 'Основное',
+        :icon => 'list',
+        :children => [
         {:name => 'Финансирование', :controller => :financings,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Приказы', :controller => :orders,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Студенты', :controller => :students,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Факультеты', :controller => :faculties,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Группы', :controller => :groups,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Строки приказов', :controller => :order_lines,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Виды стипедий', :controller => :type_scholarships,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Периоды стипендий', :controller => :scholarship_periods,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Успеваемость', :controller => :perform_data,
-         :action => :index, :icon => 'info',
-         :class => 'long'},
+        :action => :index, :icon => 'info',
+        :class => 'long'}
+      ]}
+      result << {
+        :name => 'Импорт данных',
+        :icon => 'plus',
+        :children => [
         {:name => 'Основной импорт', 
-         :controller => :admin, :action => :load_student_data_form_json, 
-         :icon => 'pencil-square-o'},
+        :controller => :admin, :action => :load_student_data_form_json, 
+        :icon => 'pencil-square-o'},
         {:name => 'Импорт периодов', 
-         :controller => :admin, :action => :load_term_data_form_json, 
-         :icon => 'calendar-plus-o'}
-     ]}
+        :controller => :admin, :action => :load_term_data_form_json, 
+        :icon => 'calendar-plus-o'}
+      ]}
    else
      if ru.is_operator?
-    result << {
-      :name => 'Финансирование',
-      :icon => 'users', :class => 'long',
-      :children => [
-      {:name => 'Добавить',
-       :icon => 'plus',
-       :controller => :financings, :action => :new,},
-      {:name => 'вид стипендии', :icon => 'briefcase', :controller => :type_scholarships, :action => :index,},
-      {:name => 'Студенты', :icon => 'archive', :controller => :students, :action => :index,},
-       ]}
+      result << {
+        :name => 'Основное',
+        :icon => 'list',
+        :children => [
+        {:name => 'Финансирование', :controller => :financings,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Приказы', :controller => :orders,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Студенты', :controller => :students,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Факультеты', :controller => :faculties,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Группы', :controller => :groups,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Строки приказов', :controller => :order_lines,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Виды стипедий', :controller => :type_scholarships,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Периоды стипендий', :controller => :scholarship_periods,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Успеваемость', :controller => :perform_data,
+        :action => :index, :icon => 'info',
+        :class => 'long'}
+      ]}
+      result << {
+        :name => 'Импорт данных',
+        :icon => 'plus',
+        :children => [
+        {:name => 'Основной импорт', 
+        :controller => :admin, :action => :load_student_data_form_json, 
+        :icon => 'pencil-square-o'},
+        {:name => 'Импорт периодов', 
+        :controller => :admin, :action => :load_term_data_form_json, 
+        :icon => 'calendar-plus-o'}
+      ]}
 
    end
    end

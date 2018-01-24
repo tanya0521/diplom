@@ -2,11 +2,11 @@
 
 = link_to 'Внести новый период начисления стипендии', new_scholarship_period_path, class: "btn btn-primary"
 
-%table.table
+%table.table-hover.table-condensed
   %thead
     %tr
-      %th Начало
-      %th Окончание
+      %th.tbl-width65.text-center  Начало
+      %th.tbl-width65.text-center  Окончание
       %th
       %th
       %th
@@ -14,8 +14,8 @@
   %tbody
     - @scholarship_periods.each do |scholarship_period|
       %tr
-        %td= scholarship_period.begin
-        %td= scholarship_period.end
+        %td.tbl-width65.text-center= scholarship_period.begin
+        %td.tbl-width65.text-center= scholarship_period.end
         %td= link_to 'Показать', scholarship_period, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_scholarship_period_path(scholarship_period), class: "btn btn-warning"
         %td= link_to 'Удалить', scholarship_period, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"

@@ -1,11 +1,11 @@
-%h1 Listing role_users
+%h1 Роль пользователя
 
-%table
+%table.table-hover.table-condensed
   %thead
     %tr
-      %th Role
-      %th User
-      %th Data
+      %th.tbl-width65.text-center  Роль
+      %th.tbl-width65.text-center  Пользователь
+      %th.tbl-width65.text-center  Информация
       %th
       %th
       %th
@@ -13,13 +13,13 @@
   %tbody
     - @role_users.each do |role_user|
       %tr
-        %td= role_user.role
-        %td= role_user.user
-        %td= role_user.data
-        %td= link_to 'Show', role_user
-        %td= link_to 'Edit', edit_role_user_path(role_user)
-        %td= link_to 'Destroy', role_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td.tbl-width65.text-center = role_user.role
+        %td.tbl-width65.text-center = role_user.user
+        %td.tbl-width65.text-center = role_user.data
+        %td= link_to 'Показать', role_user
+        %td= link_to 'Редактировать', edit_role_user_path(role_user)
+        %td= link_to 'Удалить', role_user, :method => :delete, :data => { :confirm => 'Вы уверены?' }
 
 %br
 
-= link_to 'New Role user', new_role_user_path
+= link_to 'Новая роль пользователя', new_role_user_path
