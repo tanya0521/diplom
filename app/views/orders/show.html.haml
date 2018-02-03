@@ -3,6 +3,37 @@
 %p
   %b Номер:
   = @order.number
+  
+  = link_to 'Добавить строку приказа', new_order_line_path, class: "btn btn-primary"
+
+%table.table-hover.table-condensed
+  %thead
+    %tr
+      %th.tbl-width65.text-center Начало
+      %th.tbl-width65.text-center Окончание
+      %th.tbl-width65.text-center Стипендия
+      %th.tbl-width65.text-center Студент
+      %th.tbl-width65.text-center Приказ
+      %th.tbl-width65.text-center Период выплаты стипендий
+      %th.tbl-width65.text-center Тип стипендии
+      %th
+      %th
+      %th
+
+  %tbody
+    - @order.order_lines.each do |order_line|
+      %tr
+        %td.tbl-width65.text-center= order_line.begin_date
+        %td.tbl-width65.text-center= order_line.end_date
+        %td.tbl-width65.text-center= order_line.scholarship
+        %td.tbl-width65.text-center= order_line.student
+        %td.tbl-width65.text-center= order_line.order
+        %td.tbl-width65.text-center= order_line.scholarship_period
+        %td.tbl-width65.text-center= order_line.type_scholarship
+        %td= link_to 'Показать', order_line, class: "btn btn-primary"
+        %td= link_to 'Редактировать', edit_order_line_path(order_line), class: "btn btn-warning"
+        %td= link_to 'Удалить', order_line, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+
 
 = link_to 'Редактировать', edit_order_path(@order), class: "btn btn-warning"
 \|

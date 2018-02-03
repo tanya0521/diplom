@@ -19,22 +19,26 @@ module SideBarHelper
         :action => :index, :icon => 'info'}
       ]}
       result << {
-        :name => 'Основное',
+        :name => 'Контингент',
         :icon => 'list',
         :children => [
-        {:name => 'Финансирование', :controller => :financings,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Приказы', :controller => :orders,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
         {:name => 'Студенты', :controller => :students,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Группы', :controller => :groups,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Успеваемость', :controller => :perform_data,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Факультеты', :controller => :faculties,
         :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Группы', :controller => :groups,
+        :class => 'long'}]}
+      result << {
+        :name => 'Степендии',
+        :icon => 'list',
+        :children => [
+        {:name => 'Финансирование', :controller => :financings,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Строки приказов', :controller => :order_lines,
@@ -43,10 +47,10 @@ module SideBarHelper
         {:name => 'Виды стипедий', :controller => :type_scholarships,
         :action => :index, :icon => 'info',
         :class => 'long'},
-        {:name => 'Периоды стипендий', :controller => :scholarship_periods,
+        {:name => 'Приказы', :controller => :orders,
         :action => :index, :icon => 'info',
         :class => 'long'},
-        {:name => 'Успеваемость', :controller => :perform_data,
+        {:name => 'Периоды стипендий', :controller => :scholarship_periods,
         :action => :index, :icon => 'info',
         :class => 'long'}
       ]}
@@ -64,22 +68,26 @@ module SideBarHelper
    else
      if ru.is_operator?
       result << {
-        :name => 'Основное',
+        :name => 'Контингент',
         :icon => 'list',
         :children => [
-        {:name => 'Финансирование', :controller => :financings,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Приказы', :controller => :orders,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
         {:name => 'Студенты', :controller => :students,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Группы', :controller => :groups,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
+        {:name => 'Успеваемость', :controller => :perform_data,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Факультеты', :controller => :faculties,
         :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Группы', :controller => :groups,
+        :class => 'long'}]}
+      result << {
+        :name => 'Степендии',
+        :icon => 'list',
+        :children => [
+        {:name => 'Финансирование', :controller => :financings,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Строки приказов', :controller => :order_lines,
@@ -88,13 +96,12 @@ module SideBarHelper
         {:name => 'Виды стипедий', :controller => :type_scholarships,
         :action => :index, :icon => 'info',
         :class => 'long'},
-        {:name => 'Периоды стипендий', :controller => :scholarship_periods,
+        {:name => 'Приказы', :controller => :orders,
         :action => :index, :icon => 'info',
         :class => 'long'},
-        {:name => 'Успеваемость', :controller => :perform_data,
+        {:name => 'Периоды стипендий', :controller => :scholarship_periods,
         :action => :index, :icon => 'info',
-        :class => 'long'}
-      ]}
+        :class => 'long'}]}
       result << {
         :name => 'Импорт данных',
         :icon => 'plus',

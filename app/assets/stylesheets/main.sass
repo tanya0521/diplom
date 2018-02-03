@@ -261,18 +261,35 @@ $percents: (90 85 80 75 70 65 60 55 50 40 30 20 10 5)
     
 .btn-success
   background-color: #dde8ba // фон кнопки
-  border-color: #dde8ba // рамка
+  border-color: #696969 // рамка
   color: #000000 //цвет текста
-.btn-info
-  background-color: #68c8c9 // фон кнопки
-  border-color: #68c8c9 // рамка
+.btn-warning
+  background-color: #B0E0E6 // фон кнопки
+  border-color: #696969 // рамка
   color: #000000 //цвет текста
 .btn-danger
-  background-color: #ed5565 // фон кнопки
-  border-color: #ed5565 // рамка
+  background-color: #FF9999// фон кнопки
+  border-color: #696969 // рамка
   color: #000000 //цвет текста
 .btn
   border-radius: 5px
+.t
+  border-bottom: 1px solid $brand-primary
+.red
+  background: #FFCCCC
+  table-layout: fixed
+  width: 100%
+  border-bottom: 1px solid $brand-primary
+  &:hover
+    background: darken(#FFCCCC,15%) !important
+
+.green
+  background: #CCFFCC
+  table-layout: fixed
+  width: 100%
+    border-bottom: 1px solid $brand-primary
+  &:hover
+    background: darken(#CCFFCC,15%) !important
 
 $percents: (10 15 20 25 30 35 40 45 50 60 70 80 90 100 150 200 250 300 400 500)
 @each $percent in $percents 

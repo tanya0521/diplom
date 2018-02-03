@@ -1,6 +1,8 @@
-%h1 Информация об успеваемости
-
-= link_to 'Добавить информацию об успеваемости', new_perform_datum_path, class: "btn btn-primary"
+%h1 
+  Информация об успеваемости
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Добавить информацию об успеваемости', new_perform_datum_path, class: "btn btn-primary"
+  .clearfix
 
 %table.table-hover.table-condensed
   %thead
@@ -21,15 +23,23 @@
 
   %tbody
     - @perform_data.each do |perform_datum|
-      %tr
+      - if perform_datum.quantity2 == 0 and perform_datum.quantity3 == 0 
+        - str = "green"
+      - elsif perform_datum.quantity2 > 0 
+        - str = "red"  
+      - else 
+        - str = "t"
+
+      %tr{class: -str}
+
         %td.tbl-width65.text-center= perform_datum.quantity5
         %td.tbl-width65.text-center= perform_datum.quantity4
         %td.tbl-width65.text-center= perform_datum.quantity3
         %td.tbl-width65.text-center= perform_datum.quantity2
         %td.tbl-width65.text-center
-          = perform_datum.student.sn
-          = perform_datum.student.fn
           = perform_datum.student.ln 
+          = perform_datum.student.fn
+          = perform_datum.student.sn
         %td.tbl-width65.text-center
           = l(perform_datum.scholarship_period.begin)
           \-

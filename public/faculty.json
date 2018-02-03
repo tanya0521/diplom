@@ -39,13 +39,13 @@
 
 {"quantity5":"3", "quantity4":"4", "quantity3":"2", "quantity2":"0", "fn":"Николай", "sn":"Петрович", "ln":"Воронин", "birthday":"14.04.96", "course":"4", "faculty":"Информационная безопасность", "group":"145432", "begin":"02.02.2017"},
 
-{"quantity5":"4", "quantity4":"5", "quantity3":"3", "quantity2":"0", "fn":"Александра", "sn":"Николаевна","ln":"Брюханова", "birthday":"05.04.96", "course":"4", "faculty":"Радиотехника", "group":"141333", "begin":"02.02.2017"},
+{"quantity5":"4", "quantity4":"5", "quantity3":"0", "quantity2":"0", "fn":"Александра", "sn":"Николаевна","ln":"Брюханова", "birthday":"05.04.96", "course":"4", "faculty":"Радиотехника", "group":"141333", "begin":"02.02.2017"},
 
-{"quantity5":"5", "quantity4":"4", "quantity3":"1", "quantity2":"0", "fn":"Светлана", "sn":"Валерьевна","ln":"Лампа", "birthday":"13.12.96", "course":"4", "faculty":"Теплоэнергетика и теплотехника", "group":"143132", "begin":"02.02.2017"},
+{"quantity5":"5", "quantity4":"4", "quantity3":"0", "quantity2":"0", "fn":"Светлана", "sn":"Валерьевна","ln":"Лампа", "birthday":"13.12.96", "course":"4", "faculty":"Теплоэнергетика и теплотехника", "group":"143132", "begin":"02.02.2017"},
 
-{"quantity5":"3", "quantity4":"4", "quantity3":"3", "quantity2":"1", "fn":"Евгений", "sn":"Константинович","ln":"Морозов", "birthday":"25.06.96", "course":"4", "faculty":"Машиностроение", "group":"141834", "begin":"02.02.2017"},
+{"quantity5":"3", "quantity4":"4", "quantity3":"0", "quantity2":"1", "fn":"Евгений", "sn":"Константинович","ln":"Морозов", "birthday":"25.06.96", "course":"4", "faculty":"Машиностроение", "group":"141834", "begin":"02.02.2017"},
 
-{"quantity5":"4", "quantity4":"3", "quantity3":"5", "quantity2":"0", "fn":"Юлия", "sn":"Дмитриевна","ln":"Манохина", "birthday":"23.11.96", "course":"4", "faculty":"Экономическая безопасность", "group":"142433", "begin":"02.02.2017"},
+{"quantity5":"4", "quantity4":"3", "quantity3":"0", "quantity2":"0", "fn":"Юлия", "sn":"Дмитриевна","ln":"Манохина", "birthday":"23.11.96", "course":"4", "faculty":"Экономическая безопасность", "group":"142433", "begin":"02.02.2017"},
 
 {"quantity5":"4", "quantity4":"4", "quantity3":"3", "quantity2":"0", "fn":"Константин", "sn":"Дмитриевич","ln":"Ташкинов", "birthday":"30.06.96", "course":"4", "faculty":"9", "group":"143633", "begin":"02.02.2017"},
 
