@@ -1,12 +1,14 @@
-%h1 Факультеты
+%h1 
+  Факультеты
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Создать факультет', new_faculty_path, class: "btn btn-primary"
+  .clearfix
 
-= link_to 'Создать факультет', new_faculty_path, class: "btn btn-primary"
-
-%table.table.table-hover
+%table.table.table-hover.table-condensed
   %thead
     %tr
       %th.tbl-width65.text-center  Название
-      %th.tbl-width65.text-center  Группа
+      %th
       %th
       %th
       %th
@@ -15,7 +17,6 @@
     - @faculties.each do |faculty|
       %tr
         %td.tbl-width65.text-center= faculty.namef
-        %td.tbl-width65.text-center= faculty.groups.map{|gr|gr.numberg}.join(", ")
         %td= link_to 'Показать', faculty, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_faculty_path(faculty), class: "btn btn-warning"
         %td= link_to 'Удалить', faculty, method: :delete, data: { confirm: 'Вы уверены??' }, class: "btn btn-danger"

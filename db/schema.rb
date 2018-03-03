@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20171013203335) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "number",     null: false
+    t.date     "data",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

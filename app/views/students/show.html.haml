@@ -1,32 +1,38 @@
-%p#notice= notice
 
-%p
-  %b Имя:
-  = @student.fn
-%p
-  %b Фамилия:
-  = @student.ln
-%p
-  %b Отчество:
-  = @student.sn
-%p
-  %b День рождения:
-  = @student.birthday
-%p
-  %b Курс:
-  = @student.course
-%p
-  %b Факультет:
-  = @student.faculty.namef
-%p
-  %b Группа:
-  = @student.group.numberg
-%p
-  %b Стипендии:
-  - @student.order_lines.each do |ol|
-    = ol.beginning_date
-    %br
-%h4 Успеваемость
+%h1= @student.ln
+%h3= @student.fn 
+%h3= @student.sn
+
+%dl
+  
+  %dt= Student.human_attribute_name(:Фамилия)
+  %dd= @student.ln
+
+  %dt= Student.human_attribute_name(:Имя)
+  %dd= @student.fn
+
+  %dt= Student.human_attribute_name(:Отчество)
+  %dd= @student.sn
+
+  %dt= Student.human_attribute_name(:"День рождения")
+  %dd= @student.birthday
+
+  %dt= Student.human_attribute_name(:Курс)
+  %dd= @student.course
+
+  %dt= Student.human_attribute_name(:Факультет)
+  %dd= @student.faculty.namef
+
+  %dt= Student.human_attribute_name(:Группа)
+  %dd= @student.group.numberg
+
+%br
+
+
+
+%h2 Успеваемость
+
+
 
 .pull-right{style: "padding-top: 1rem"}
   = link_to 'Добавить информацию об успеваемости',     new_perform_datum_path, class: "btn btn-primary"

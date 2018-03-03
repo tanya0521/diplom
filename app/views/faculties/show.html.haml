@@ -3,9 +3,6 @@
 %p
   %b Название:
   = @faculty.namef
-%p
-  %b Группа:
-  = @faculty.groups.map{|gr|gr.numberg}.join(", ")
 
 = link_to 'Редактировать', edit_faculty_path(@faculty), class: "btn btn-warning"
 \|

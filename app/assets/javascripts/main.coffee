@@ -8,9 +8,10 @@ dtpick = ->
   false
 @datepicker_activation = ->
   window.datepicker_activation_by_item($(document))
+  false
 @datepicker_activation_by_item = (item)->
   item.find('.datepicker').datetimepicker({locale: 'ru', format: 'DD.MM.YYYY'})
-
+  false
 ready = ->
   dtpick()
   loaderf()

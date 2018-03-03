@@ -263,14 +263,22 @@ $percents: (90 85 80 75 70 65 60 55 50 40 30 20 10 5)
   background-color: #dde8ba // фон кнопки
   border-color: #696969 // рамка
   color: #000000 //цвет текста
+  &:hover
+    background: darken(#dde8ba,15%) !important
 .btn-warning
   background-color: #B0E0E6 // фон кнопки
   border-color: #696969 // рамка
   color: #000000 //цвет текста
+  color: #000000 //цвет текста
+  &:hover
+    background: darken(#B0E0E6,15%) !important
 .btn-danger
   background-color: #FF9999// фон кнопки
   border-color: #696969 // рамка
   color: #000000 //цвет текста
+  &:hover
+    background: darken(#FF9999,10%) !important
+
 .btn
   border-radius: 5px
 .t
@@ -291,8 +299,16 @@ $percents: (90 85 80 75 70 65 60 55 50 40 30 20 10 5)
   &:hover
     background: darken(#CCFFCC,15%) !important
 
+.clfloat
+  float: right
+
+
+
 $percents: (10 15 20 25 30 35 40 45 50 60 70 80 90 100 150 200 250 300 400 500)
 @each $percent in $percents 
   .tbl-width#{$percent}
     width: #{$percent+'px'}
+
+.h100
+  height: 100%
  

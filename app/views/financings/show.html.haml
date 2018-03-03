@@ -8,10 +8,12 @@
   = @financing.suum
 %p
   %b Факультет:
-  = @financing.faculty
+  = @financing.faculty.namef
 %p
   %b Период выплаты стипендии:
-  = @financing.scholarship_period
+  = @financing.scholarship_period.begin
+  \-
+  = @financing.scholarship_period.end
 %p
   %b Вид стипендии:
   = @financing.type_scholarship_id

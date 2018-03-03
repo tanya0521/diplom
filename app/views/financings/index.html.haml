@@ -1,8 +1,10 @@
-%h1 Список источников финансирования
+%h1 
+  Источники финансирования
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Добавить источник финансирования', new_financing_path, class: "btn btn-primary"
+  .clearfix
 
-= link_to 'Добавить источник финансирования', new_financing_path, class: "btn btn-primary"
-
-%table.table-hover.table-condensed
+%table.table.table-hover.table-condensed
   %thead
     %tr
       %th.tbl-width65.text-center Название источника финансирования
@@ -19,8 +21,12 @@
       %tr
         %td.tbl-width65.text-center= financing.name_financing
         %td.tbl-width65.text-center= financing.suum
-        %td.tbl-width65.text-center= financing.faculty
-        %td.tbl-width65.text-center= financing.scholarship_period
+        %td.tbl-width65.text-center
+          = financing.faculty.namef
+        %td.tbl-width65.text-center
+          = l(financing.scholarship_period.begin)
+          \— 
+          = l(financing.scholarship_period.end)
         %td.tbl-width65.text-center= financing.type_scholarship_id
         %td= link_to 'Показать', financing, class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_financing_path(financing), class: "btn btn-warning"

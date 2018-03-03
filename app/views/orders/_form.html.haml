@@ -14,6 +14,11 @@
   .row
     .col-md-6
       .form-group
+        = f.label :"Дата"
+        = f.text_area :data, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
   .form-actions
     = f.submit 'Сохранить', class: "btn btn-success"
     \|

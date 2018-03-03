@@ -4,49 +4,75 @@
     = link_to 'Добавить информацию об успеваемости', new_perform_datum_path, class: "btn btn-primary"
   .clearfix
 
-%table.table-hover.table-condensed
-  %thead
-    %tr
-      %th.tbl-width65.text-center
-        Кол-во 5-к
-      %th.tbl-width65.text-center
-        Кол-во 4-к
-      %th.tbl-width65.text-center 
-        Кол-во 3-к
-      %th.tbl-width65.text-center 
-        Кол-во 2-к
-      %th.tbl-width65.text-center Студент
-      %th.tbl-width65.text-center Период начисления стипендий
-      %th
-      %th
-      %th
+.form-inline
+  %table.table.table-hover.table-condensed
+    %thead
+      %tr
+        %th.tbl-width65.text-center
+          Кол-во 5-к
+          = number_field :quantity5, class: 'form-control'
+          .pull-right{style: "padding-top: 2rem"}
+          = link_to fa_icon :search, class: "btn btn-primary clfloat"
+        %th.tbl-width65.text-center
+          Кол-во 4-к
+          = number_field :quantity4, class: 'form-control'
+          = link_to fa_icon :search, class: "btn btn-primary clfloat"
+          .pull-right{style: "padding-top: 2rem"}
+        %th.tbl-width65.text-center 
+          Кол-во 3-к
+          .pull-right{style: "padding-top: 4rem"}
+        %th.tbl-width65.text-center 
+          Кол-во 2-к
+          .pull-right{style: "padding-top: 4rem"}
+        %th.tbl-width65.text-center 
+          Студент
+          .form-group
+            .input-group
+              = text_field :student_id, class: 'form-control h100'
+              .input-group-addon
+                = link_to fa_icon :search, class: "btn btn-primary clfloat"
+          .pull-right{style: "padding-top: 0.5rem"}
+        %th.tbl-width65.text-center 
+          Период начисления стипендий
+          = text_field :scholarship_period_id, class: 'form-control'
+          = link_to fa_icon :search, class: "btn btn-primary clfloat"
+          .pull-right{style: "padding-top: 5.3rem"}
+          
+        %th
+        %th
+        %th
 
-  %tbody
-    - @perform_data.each do |perform_datum|
-      - if perform_datum.quantity2 == 0 and perform_datum.quantity3 == 0 
-        - str = "green"
-      - elsif perform_datum.quantity2 > 0 
-        - str = "red"  
-      - else 
-        - str = "t"
+    %tbody
+      - @perform_data.each do |perform_datum|
+        - if perform_datum.quantity2 == 0 and perform_datum.quantity3 == 0 
+          - str = "green"
+        - elsif perform_datum.quantity2 > 0 
+          - str = "red"  
+        - else 
+          - str = "t"
 
-      %tr{class: -str}
+        %tr{class: -str}
 
-        %td.tbl-width65.text-center= perform_datum.quantity5
-        %td.tbl-width65.text-center= perform_datum.quantity4
-        %td.tbl-width65.text-center= perform_datum.quantity3
-        %td.tbl-width65.text-center= perform_datum.quantity2
-        %td.tbl-width65.text-center
-          = perform_datum.student.ln 
-          = perform_datum.student.fn
-          = perform_datum.student.sn
-        %td.tbl-width65.text-center
-          = l(perform_datum.scholarship_period.begin)
-          \-
-          = l(perform_datum.scholarship_period.end)
-        %td= link_to 'Показать', perform_datum, class: "btn btn-primary"
-        %td= link_to 'Редактировать', edit_perform_datum_path(perform_datum), class: "btn btn-warning"
-        %td= link_to 'Удалить', perform_datum, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+          %td.tbl-width65.text-center= perform_datum.quantity5
+          %td.tbl-width65.text-center= perform_datum.quantity4
+          %td.tbl-width65.text-center= perform_datum.quantity3
+          %td.tbl-width65.text-center= perform_datum.quantity2
+          %td.tbl-width65.text-center
+            - if rand(2) == 1
+              = link_to perform_datum.student.ln 
+              = link_to perform_datum.student.fn
+              = link_to perform_datum.student.sn
+            - else
+              = perform_datum.student.ln 
+              = perform_datum.student.fn
+              = perform_datum.student.sn
+          %td.tbl-width65.text-center
+            = l(perform_datum.scholarship_period.begin)
+            \— 
+            = l(perform_datum.scholarship_period.end)
+          %td= link_to 'Показать', perform_datum, class: "btn btn-primary"
+          %td= link_to 'Редактировать', edit_perform_datum_path(perform_datum), class: "btn btn-warning"
+          %td= link_to 'Удалить', perform_datum, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
 
-%br
+  %br
 

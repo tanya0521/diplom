@@ -35,7 +35,7 @@ module SideBarHelper
         :action => :index, :icon => 'info',
         :class => 'long'}]}
       result << {
-        :name => 'Степендии',
+        :name => 'Стипендии',
         :icon => 'list',
         :children => [
         {:name => 'Финансирование', :controller => :financings,
@@ -44,7 +44,7 @@ module SideBarHelper
         {:name => 'Строки приказов', :controller => :order_lines,
         :action => :index, :icon => 'info',
         :class => 'long'},
-        {:name => 'Виды стипедий', :controller => :type_scholarships,
+        {:name => 'Виды стипендий', :controller => :type_scholarships,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Приказы', :controller => :orders,
@@ -84,7 +84,7 @@ module SideBarHelper
         :action => :index, :icon => 'info',
         :class => 'long'}]}
       result << {
-        :name => 'Степендии',
+        :name => 'Стипендии',
         :icon => 'list',
         :children => [
         {:name => 'Финансирование', :controller => :financings,
@@ -93,7 +93,7 @@ module SideBarHelper
         {:name => 'Строки приказов', :controller => :order_lines,
         :action => :index, :icon => 'info',
         :class => 'long'},
-        {:name => 'Виды стипедий', :controller => :type_scholarships,
+        {:name => 'Виды стипендий', :controller => :type_scholarships,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Приказы', :controller => :orders,

@@ -1,8 +1,10 @@
-%h1 Группы
+%h1 
+  Группы
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Добавить группу', new_group_path, class: "btn btn-primary"
+  .clearfix
 
-= link_to 'Добавить группу', new_group_path, class: "btn btn-primary"
-
-%table.table-hover.table-condensed
+%table.table.table-hover.table-condensed
   %thead
     %tr
       %th.tbl-width200.text-center Номер

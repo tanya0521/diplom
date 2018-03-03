@@ -1,8 +1,10 @@
-%h1 Период начисления стипендии
+%h1 
+  Период начисления стипендии
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Внести новый период начисления стипендии', new_scholarship_period_path, class: "btn btn-primary"
+  .clearfix
 
-= link_to 'Внести новый период начисления стипендии', new_scholarship_period_path, class: "btn btn-primary"
-
-%table.table-hover.table-condensed
+%table.table.table-hover.table-condensed
   %thead
     %tr
       %th.tbl-width65.text-center  Начало

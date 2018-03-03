@@ -10,7 +10,7 @@
     .col-md-6
       .form-group
         = f.label :"Начало"
-        = f.text_area :begin_date, class: 'form-control'
+        = f.text_field :begin_date, class: 'form-control datepicker' 
   .row
     .col-md-6
       .form-group
@@ -25,22 +25,22 @@
     .col-md-6
       .form-group
         = f.label :"Студент"
-        = f.text_field :student, class: 'form-control'
+        = f.select :student_id, options_for_select(orderlines_options()),{}, class: 'form-control'
   .row
     .col-md-6
       .form-group
         = f.label :"Приказ"
-        = f.text_field :order, class: 'form-control'
+        = f.select :order_id, options_for_select(orderlines_options2()),{},  class: 'form-control'
   .row
     .col-md-6
       .form-group
         = f.label :"Период начисления стипендии"
-        = f.text_field :scholarship_period, class: 'form-control'
+        = f.select :scholarship_period_id, options_for_select(orderlines_options3()),{},  class: 'form-control'
   .row
     .col-md-6
       .form-group
         = f.label :"Тип стипендии"
-        = f.text_field :type_scholarship, class: 'form-control'
+        = f.select :type_scholarship_id, options_for_select(orderlines_options4()),{},  class: 'form-control'
   .form-actions
     = f.submit 'Сохранить', class: "btn btn-success"
     \|
