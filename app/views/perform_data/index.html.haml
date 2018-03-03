@@ -4,40 +4,56 @@
     = link_to 'Добавить информацию об успеваемости', new_perform_datum_path, class: "btn btn-primary"
   .clearfix
 
-.form-inline
+= form_tag do
   %table.table.table-hover.table-condensed
     %thead
-      %tr
+      %tr.noborder-bottom
         %th.tbl-width65.text-center
           Кол-во 5-к
-          = number_field :quantity5, class: 'form-control'
-          .pull-right{style: "padding-top: 2rem"}
-          = link_to fa_icon :search, class: "btn btn-primary clfloat"
         %th.tbl-width65.text-center
           Кол-во 4-к
-          = number_field :quantity4, class: 'form-control'
-          = link_to fa_icon :search, class: "btn btn-primary clfloat"
-          .pull-right{style: "padding-top: 2rem"}
         %th.tbl-width65.text-center 
           Кол-во 3-к
-          .pull-right{style: "padding-top: 4rem"}
         %th.tbl-width65.text-center 
           Кол-во 2-к
-          .pull-right{style: "padding-top: 4rem"}
         %th.tbl-width65.text-center 
-          Студент
-          .form-group
-            .input-group
-              = text_field :student_id, class: 'form-control h100'
-              .input-group-addon
-                = link_to fa_icon :search, class: "btn btn-primary clfloat"
-          .pull-right{style: "padding-top: 0.5rem"}
+          Студент 
         %th.tbl-width65.text-center 
           Период начисления стипендий
-          = text_field :scholarship_period_id, class: 'form-control'
-          = link_to fa_icon :search, class: "btn btn-primary clfloat"
-          .pull-right{style: "padding-top: 5.3rem"}
-          
+        %th
+        %th
+        %th
+      %tr.noborder-top
+        %th.tbl-width65.text-center
+          .form-group
+            .input-group  
+              = number_field :quantity5, '', class: 'form-control'
+              %span.input-group-addon
+                %span
+                  = link_to fa_icon :search, class: 'fa-fw'
+        %th.tbl-width65.text-center
+          .form-group
+            .input-group  
+              = number_field :quantity4, '', class: 'form-control'
+              %span.input-group-addon
+                %span
+                  = link_to fa_icon :search, class: 'fa-fw'
+        %th.tbl-width65.text-center 
+        %th.tbl-width65.text-center 
+        %th.tbl-width65.text-center 
+          .form-group
+            .input-group  
+              = text_field :student_id, '', class: 'form-control'
+              %span.input-group-addon
+                %span
+                  = link_to fa_icon :search, class: 'fa-fw'
+        %th.tbl-width65.text-center 
+          .form-group
+            .input-group  
+              = text_field :cholarship_period_id, '', class: 'form-control'
+              %span.input-group-addon
+                %span
+                  = link_to fa_icon :search, class: 'fa-fw'
         %th
         %th
         %th
