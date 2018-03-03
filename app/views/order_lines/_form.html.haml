@@ -10,7 +10,10 @@
     .col-md-6
       .form-group
         = f.label :"Начало"
-        = f.text_field :begin_date, class: 'form-control datepicker' 
+        .input-group.datepicker
+          = f.text_field :begin_date, class: 'form-control'
+          %span.input-group-addon
+            %span.glyphicon.glyphicon-calendar 
   .row
     .col-md-6
       .form-group
