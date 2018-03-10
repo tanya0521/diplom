@@ -4,6 +4,22 @@
     = link_to 'Добавить группу', new_group_path, class: "btn btn-primary"
   .clearfix
 
+- @groups_hash.each do |faculty, groups_by_courses|
+  = faculty.try(:namef)
+  %table.table.table-hover.table-condensed
+    %thead
+      %tr
+        - groups_by_courses.keys.each do |course|
+          %th
+            = course
+    %tbody
+      %tr
+        - groups_by_courses.each do |course, groups|
+          %td
+            %ul
+              - groups.each do |g|
+                %li= link_to g.numberg, g
+      
 %table.table.table-hover.table-condensed
   %thead
     %tr

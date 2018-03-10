@@ -1,44 +1,44 @@
 
-%h1= @student.ln
-%h3= @student.fn 
-%h3= @student.sn
+%h1
+  = @student.ln
+  = @student.fn 
+  = @student.sn
 
-%dl
-  
-  %dt= Student.human_attribute_name(:Фамилия)
-  %dd= @student.ln
+.row 
+  .label.label-primary.sqlabel
+    .big
+      = @student.birthday
+    .tiny
+      = Student.human_attribute_name(:"День рождения")
+  .label.label-danger.sqlabel
+    .big
+      = @student.course
+    .tiny
+      = Student.human_attribute_name(:Курс)
+  .label.label-success.sqlabel
+    .big
+      = @student.faculty.namef
+    .tiny
+      = Student.human_attribute_name(:Факультет)
+  .label.label-warning.sqlabel
+    .big
+      = @student.group.numberg
+    .tiny
+      = Student.human_attribute_name(:Группа)
 
-  %dt= Student.human_attribute_name(:Имя)
-  %dd= @student.fn
-
-  %dt= Student.human_attribute_name(:Отчество)
-  %dd= @student.sn
-
-  %dt= Student.human_attribute_name(:"День рождения")
-  %dd= @student.birthday
-
-  %dt= Student.human_attribute_name(:Курс)
-  %dd= @student.course
-
-  %dt= Student.human_attribute_name(:Факультет)
-  %dd= @student.faculty.namef
-
-  %dt= Student.human_attribute_name(:Группа)
-  %dd= @student.group.numberg
 
 %br
 
 
 
-%h2 Успеваемость
+%h2 
+  Успеваемость
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Добавить информацию об успеваемости',     
+new_perform_datum_path, class: "btn btn-primary"
+  .clearfix
 
-
-
-.pull-right{style: "padding-top: 1rem"}
-  = link_to 'Добавить информацию об успеваемости',     new_perform_datum_path, class: "btn btn-primary"
-.clearfix
-
-%table.table-hover.table-condensed
+%table.table.table-hover.table-condensed
   %thead
     %tr
       %th.tbl-width65.text-center
@@ -49,7 +49,6 @@
         Кол-во 3-к
       %th.tbl-width65.text-center 
         Кол-во 2-к
-      %th.tbl-width65.text-center Студент
       %th.tbl-width65.text-center Период начисления стипендий
       %th
       %th
@@ -71,17 +70,12 @@
         %td.tbl-width65.text-center= perform_datum.quantity3
         %td.tbl-width65.text-center= perform_datum.quantity2
         %td.tbl-width65.text-center
-          = perform_datum.student.sn
-          = perform_datum.student.fn
-          = perform_datum.student.ln 
-        %td.tbl-width65.text-center
           = l(perform_datum.scholarship_period.begin)
           \-
           = l(perform_datum.scholarship_period.end)
-        %td= link_to 'Показать', perform_datum, class: "btn btn-primary"
-        %td= link_to 'Редактировать', edit_perform_datum_path(perform_datum), class: "btn btn-warning"
-        %td= link_to 'Удалить', perform_datum, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+        %td
+        %td= link_to 'Приказ',orders_path, class: "btn btn-warning"
+        %td= link_to 'Включить в приказ',orders_path, class: "btn btn-warning"
 
-= link_to 'Редактирвание', edit_student_path(@student), class: "btn btn-warning"
-\|
+
 = link_to 'Назад', students_path, class: "btn btn-primary"

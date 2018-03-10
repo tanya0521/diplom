@@ -15,7 +15,10 @@
     .col-md-6
       .form-group
         = f.label :"Дата"
-        = f.text_area :data, class: 'form-control'
+        .input-group.datepicker
+          = f.text_field :data, class: 'form-control'
+          %span.input-group-addon
+            %span.glyphicon.glyphicon-calendar 
   .row
     .col-md-6
       .form-group

@@ -5,6 +5,10 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    @groups_hash = Hash.new{ |h, k| h[k] = Hash.new{ |h2, k2| h2[k2] = [] }}
+    @groups.each do |g|
+      @groups_hash[g.faculty][g.students.try(:first).try(:course).to_i] << g
+    end
   end
 
   # GET /groups/1

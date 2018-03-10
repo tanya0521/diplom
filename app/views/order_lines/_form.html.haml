@@ -18,7 +18,10 @@
     .col-md-6
       .form-group
         = f.label :"Окончание"
-        = f.text_area :end_date, class: 'form-control'
+        .input-group.datepicker
+          = f.text_field :end_date, class: 'form-control'
+          %span.input-group-addon
+            %span.glyphicon.glyphicon-calendar 
   .row
     .col-md-6
       .form-group

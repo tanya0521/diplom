@@ -25,38 +25,45 @@
         %th
       %tr.noborder-top
         %th.tbl-width65.text-center
+         
+        %th.tbl-width65.text-center
           .form-group
             .input-group  
-              = number_field :quantity5, '', class: 'form-control'
+              = number_field :quantity4, '', class: 'form-control', placeholder: "Число или %"
               %span.input-group-addon
                 %span
                   = link_to fa_icon :search, class: 'fa-fw'
         %th.tbl-width65.text-center
           .form-group
             .input-group  
-              = number_field :quantity4, '', class: 'form-control'
+              = number_field :quantity3, '', class: 'form-control', placeholder: "Число или %"
               %span.input-group-addon
                 %span
                   = link_to fa_icon :search, class: 'fa-fw'
-        %th.tbl-width65.text-center 
-        %th.tbl-width65.text-center 
+ 
         %th.tbl-width65.text-center 
           .form-group
             .input-group  
-              = text_field :student_id, '', class: 'form-control'
+              = number_field :quantity2, '', class: 'form-control', placeholder: "Число или %"
               %span.input-group-addon
                 %span
                   = link_to fa_icon :search, class: 'fa-fw'
+
         %th.tbl-width65.text-center 
           .form-group
             .input-group  
-              = text_field :cholarship_period_id, '', class: 'form-control'
+              = text_field :student_id, '', class: 'form-control', placeholder: "Часть ФИО"
               %span.input-group-addon
                 %span
                   = link_to fa_icon :search, class: 'fa-fw'
-        %th
-        %th
-        %th
+        %th.tbl-width65.text-center{colspan:4}
+          .form-group
+            .input-group  
+              = select_tag :scholarship_period_id, options_for_select(["02.02.2017 — 30.06.2017","18.02.2018 — 18.02.2018","01.09.2012 — 30.01.2013","06.02.2013 — 29.06.2013","05.02.2014 — 28.06.2014","07.02.2015 — 30.06.2015"]), class: 'form-control'
+              %span.input-group-addon
+                %span
+                  = link_to fa_icon :search, class: 'fa-fw'
+        
 
     %tbody
       - @perform_data.each do |perform_datum|
@@ -86,9 +93,15 @@
             = l(perform_datum.scholarship_period.begin)
             \— 
             = l(perform_datum.scholarship_period.end)
-          %td= link_to 'Показать', perform_datum, class: "btn btn-primary"
-          %td= link_to 'Редактировать', edit_perform_datum_path(perform_datum), class: "btn btn-warning"
-          %td= link_to 'Удалить', perform_datum, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+          %td
+            = link_to  perform_datum, class: "btn btn-primary" do
+              =fa_icon :eye
+          %td
+            = link_to  edit_perform_datum_path(perform_datum), class: "btn btn-warning" do
+              =fa_icon :edit
+          %td
+            = link_to  perform_datum, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger" do
+              =fa_icon :times
 
   %br
 
