@@ -7,6 +7,10 @@ class OrderLinesController < ApplicationController
     @order_lines = OrderLine.all
   end
 
+  def select_students_for_order
+    @order_lines = OrderLine.all
+  end
+
   # GET /order_lines/1
   # GET /order_lines/1.json
   def show

@@ -10,6 +10,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    respond_to do |format|
+      format.pdf do
+        send_file('/home/tanya/app5-master/public/стипендии.pdf', filename: "Приказ № #{@order.number} от #{l(@order.data)}", :type => 'application/pdf', :disposition => 'inline')
+      end
+      format.html do
+      end
+    end
   end
 
   # GET /orders/new

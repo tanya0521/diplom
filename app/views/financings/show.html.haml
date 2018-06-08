@@ -1,23 +1,106 @@
-%p#notice= notice
-
-%p
-  %b Источник финансирования:
-  = @financing.name_financing
-%p
-  %b Сумма финансирования:
-  = @financing.suum
-%p
-  %b Факультет:
-  = @financing.faculty.namef
-%p
-  %b Период выплаты стипендии:
-  = @financing.scholarship_period.begin
+%h1 
+  Расчет стипендий
+  =surround '(',')' do
+    = @financing.faculty.namef
+%h3 
+  = @financing.name_financing 
+  за период:
+  = l(@financing.scholarship_period.begin)
   \-
-  = @financing.scholarship_period.end
-%p
-  %b Вид стипендии:
-  = @financing.type_scholarship_id
+  = l(@financing.scholarship_period.end)
+  =surround '(',')' do
 
-= link_to 'Редактировать', edit_financing_path(@financing), class: "btn btn-warning"
-\|
-= link_to 'Назад', financings_path, class: "btn btn-primary"
+    = @financing.type_scholarship.typescholarship
+=form_tag financing_path(@financing), method: :get  do 
+  .row
+    .col-md-6
+      .form-group
+        =label_tag :suum, 'Cумма'
+        =text_field_tag :suum, @financing.suum, class: "form-control"
+    .col-md-6
+      .form-group
+        =label_tag :a, 'Количество отличников'
+        =text_field_tag :a, '1257', class: "form-control"
+  .row
+    .col-md-6
+      .form-group
+        =label_tag :b, 'Количество хорошистов'
+        =text_field_tag :b, '3083', class: "form-control"
+    .col-md-6
+      .form-group
+        =label_tag :c, 'Коэффициент'
+        =text_field_tag :c, '1.5', class: "form-control"
+  .row
+    .col-md-6 
+      .form-group
+  .form-actions
+    = submit_tag 'Рассчитать', class: "btn btn-success"
+    = submit_tag 'Сохранить параметры финансирования', class: "btn btn-warning"
+-if params.has_key?("suum")
+  %h2 Результаты расчёта
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th
+        %th сентябрь
+        %th октябрь
+        %th ноябрь
+        %th декабрь
+        %th январь
+    %tbody
+      %tr
+        %td отличники
+        %td.text-center= @x
+        %td.text-center= @x
+        %td.text-center= @x
+        %td.text-center= @x2
+        %td.text-center= @x
+      %tr
+        %td хорошисты
+        %td.text-center= @y
+        %td.text-center= @y
+        %td.text-center= @y
+        %td.text-center= @y2
+        %td.text-center= @y
+      %tr
+        %td 
+          %b общий фонд
+        %th= @i
+        %th= @i
+        %th= @i
+        %th= @i2
+        %th= @i
+      %tr
+        %td
+          %b итого
+        %th{colspan: 4}
+        %th= @i*4+@i2
+
+      %tr
+        %td 
+          из общей суммы:
+          %br
+          фонд основных месяцев
+        %td.text-center{colspan: 4}
+        %td.text-center= @i*4
+      %tr
+        %td 
+          фонд сводного месяца
+        %td.text-center{colspan: 4}
+        %td.text-center= @i2
+      %tr
+        %td 
+          остаток округления
+        %td.text-center{colspan: 4}
+        %td.text-center= @k+@m
+
+
+
+
+
+
+    
+
+        
+
+

@@ -1,7 +1,7 @@
 class Financing < ApplicationRecord
   belongs_to :faculty
   belongs_to :scholarship_period
-  belongs_to :types_scholarship
+  belongs_to :type_scholarship
 
   validates :name_financing, presence: true
   validates :suum, presence: true

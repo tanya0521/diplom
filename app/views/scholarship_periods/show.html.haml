@@ -6,6 +6,67 @@
 %p
   %b Окончание:
   = @scholarship_period.end
+%p
+  %b Кол-во 5-к:
+%p
+  %b Кол-во 4-к:
+%p
+  %b Кол-во 3-к:
+%p
+  %b Фонд:
+%p
+  %b Допустимая разница между степендиями отличников и хорошистов:
+%p
+  %b Допустимая разница между степендиями хорошистов и троечников:
+
+  %br
+%br
+
+
+%h2 
+  Успеваемость
+  .pull-right{style: "padding-top: 1rem"}
+    = link_to 'Добавить информацию об успеваемости',     
+new_perform_datum_path, class: "btn btn-primary"
+  .clearfix
+
+%table.table.table-hover.table-condensed
+  %thead
+    %tr
+      %th.tbl-width65.text-center
+        Кол-во 5-к
+      %th.tbl-width65.text-center
+        Кол-во 4-к
+      %th.tbl-width65.text-center 
+        Кол-во 3-к
+      %th.tbl-width65.text-center 
+        Кол-во 2-к
+      %th.tbl-width65.text-center Период начисления стипендий
+      %th
+      %th
+      %th
+
+  %tbody
+    - @scholarship_period.perform_datums.each do |perform_datum|
+      - if perform_datum.quantity2 == 0 and perform_datum.quantity3 == 0 
+        - str = "green"
+      - elsif perform_datum.quantity2 > 0 
+        - str = "red"  
+      - else 
+        - str = "t"
+
+      %tr{class: -str}
+
+        %td.tbl-width65.text-center= perform_datum.quantity5
+        %td.tbl-width65.text-center= perform_datum.quantity4
+        %td.tbl-width65.text-center= perform_datum.quantity3
+        %td.tbl-width65.text-center= perform_datum.quantity2
+        %td.tbl-width65.text-center
+          = l(perform_datum.scholarship_period.begin)
+          \-
+          = l(perform_datum.scholarship_period.end)
+        %td
+
 
 = link_to 'Редактировать', edit_scholarship_period_path(@scholarship_period), class: "btn btn-warning"
 \|

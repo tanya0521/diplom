@@ -9,6 +9,9 @@
     %tr
       %th.tbl-width65.text-center Номер
       %th.tbl-width65.text-center Дата
+      %th.tbl-width65.text-center Статус
+      %th.tbl-width65.text-center Кол-во прил.
+      %th.tbl-width65.text-center Кол-во. студ.
       %th
       %th
 
@@ -17,9 +20,12 @@
       %tr
         %td.tbl-width65.text-center= order.number
         %td.tbl-width65.text-center= order.data
-        %td= link_to 'Показать', order, class: "btn btn-primary"
+        %td= ['Проект', 'На подписи', 'Утвержден', 'Отменён'].shuffle.first
+        %td 2
+        %td 147
+        %td= link_to 'Печать', order_path(order, format: :pdf), class: "btn btn-primary"
         %td= link_to 'Редактировать', edit_order_path(order), class: "btn btn-warning"
-        %td= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+
 
 
 %br

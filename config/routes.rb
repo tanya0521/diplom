@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   post 'admin/load_student_data_from_json_commit', as: :lsdfjc
 
   resources :perform_data
-  resources :order_lines
+  resources :order_lines do
+    collection do
+      get :select_students_for_order
+    end
+  end
   resources :students
   resources :financings
   resources :faculties

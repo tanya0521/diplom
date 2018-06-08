@@ -12,9 +12,7 @@
       %th.tbl-width65.text-center Факультет
       %th.tbl-width65.text-center Период выплаты стипендии
       %th.tbl-width65.text-center Вид стипендии
-      %th
-      %th
-      %th
+      %th{style: 'width: 400px'}
 
   %tbody
     - @financings.each do |financing|
@@ -28,9 +26,13 @@
           \— 
           = l(financing.scholarship_period.end)
         %td.tbl-width65.text-center= financing.type_scholarship_id
-        %td= link_to 'Показать', financing, class: "btn btn-primary"
-        %td= link_to 'Редактировать', edit_financing_path(financing), class: "btn btn-warning"
-        %td= link_to 'Удалить', financing, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger"
+        %td{style: 'width: 400px'}
+          = link_to 'Расчет', financing, class: "btn btn-primary btn-fixed-size"
+          = link_to 'Добавить приказ', financing, class: "btn btn-success btn-fixed-size"
+          %br
+          = link_to 'Редактировать', edit_financing_path(financing), class: "btn btn-warning btn-fixed-size"
+          = link_to 'Удалить', financing, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger btn-fixed-size"
+      
 
 %br
 

@@ -9,49 +9,57 @@ module SideBarHelper
     if ru.is_admin?
       result << {
         :name => 'Администрирование',
-        :icon => 'key',
+        :icon => 'gears',
         :children => [
         {:name => 'Пользователи',
         :controller => :users, :action => :index,
-        :icon => 'file-text-o',
+        :icon => 'user',
         :class => 'long'},
         {:name => 'Роли', :controller => :roles,
-        :action => :index, :icon => 'info'}
+        :action => :index, :icon => 'vcard-o'}
       ]}
       result << {
         :name => 'Контингент',
-        :icon => 'list',
+        :icon => 'address-card',
         :children => [
         {:name => 'Студенты', :controller => :students,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'graduation-cap',
         :class => 'long'},
         {:name => 'Группы', :controller => :groups,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'users',
         :class => 'long'},
         {:name => 'Успеваемость', :controller => :perform_data,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'check-circle',
         :class => 'long'},
         {:name => 'Факультеты', :controller => :faculties,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'university',
         :class => 'long'}]}
       result << {
         :name => 'Стипендии',
-        :icon => 'list',
+        :icon => 'money',
         :children => [
         {:name => 'Финансирование', :controller => :financings,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Строки приказов', :controller => :order_lines,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Виды стипендий', :controller => :type_scholarships,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'dollar',
         :class => 'long'},
         {:name => 'Приказы', :controller => :orders,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'file',
+        :class => 'long'},
+        {:name => 'Создать новый приказ', :controller => :orders,
+        :action => :index, :icon => 'edit',
+        :class => 'long'}
+
+      ]}
+
+
+      result << {
+        :name => 'Словари',
+        :icon => 'book',
+        :children => [
+        {:name => 'Виды стипендий', :controller => :type_scholarships,
+        :action => :index, :icon => 'money',
         :class => 'long'},
         {:name => 'Периоды стипендий', :controller => :scholarship_periods,
-        :action => :index, :icon => 'info',
+        :action => :index, :icon => 'calendar',
         :class => 'long'}
       ]}
       result << {
@@ -60,16 +68,16 @@ module SideBarHelper
         :children => [
         {:name => 'Основной импорт', 
         :controller => :admin, :action => :load_student_data_form_json, 
-        :icon => 'pencil-square-o'},
+        :icon => 'list'},
         {:name => 'Импорт периодов', 
         :controller => :admin, :action => :load_term_data_form_json, 
         :icon => 'calendar-plus-o'}
-      ]}
+      ]} 
    else
      if ru.is_operator?
       result << {
         :name => 'Контингент',
-        :icon => 'list',
+        :icon => 'users',
         :children => [
         {:name => 'Студенты', :controller => :students,
         :action => :index, :icon => 'info',
@@ -85,23 +93,29 @@ module SideBarHelper
         :class => 'long'}]}
       result << {
         :name => 'Стипендии',
-        :icon => 'list',
+        :icon => 'money',
         :children => [
         {:name => 'Финансирование', :controller => :financings,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Строки приказов', :controller => :order_lines,
-        :action => :index, :icon => 'info',
-        :class => 'long'},
-        {:name => 'Виды стипендий', :controller => :type_scholarships,
         :action => :index, :icon => 'info',
         :class => 'long'},
         {:name => 'Приказы', :controller => :orders,
         :action => :index, :icon => 'info',
         :class => 'long'},
+        {:name => 'Создать новый приказ', :controller => :orders,
+        :action => :index, :icon => 'info',
+        :class => 'long'}
+      ]}
+      result << {
+        :name => 'Словари',
+        :icon => 'book',
+        :children => [
+        {:name => 'Виды стипендий', :controller => :type_scholarships,
+        :action => :index, :icon => 'info',
+        :class => 'long'},
         {:name => 'Периоды стипендий', :controller => :scholarship_periods,
         :action => :index, :icon => 'info',
-        :class => 'long'}]}
+        :class => 'long'}
+      ]}
       result << {
         :name => 'Импорт данных',
         :icon => 'plus',

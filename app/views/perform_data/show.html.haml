@@ -1,27 +1,44 @@
 %p#notice= notice
-
-%p
-  %b Количество 5:
-  = @perform_datum.quantity5
-%p
-  %b Количество 4:
-  = @perform_datum.quantity4
-%p
-  %b Количество 3:
-  = @perform_datum.quantity3
-%p
-  %b Количество 2:
-  = @perform_datum.quantity2
-%p
-  %b Студент:
+%h1
   = @perform_datum.student.ln
-  = @perform_datum.student.fn
+  = @perform_datum.student.fn 
   = @perform_datum.student.sn
-%p
-  %b Период начислений стипендий:
-  = @perform_datum.scholarship_period.begin
-  \-
-  = @perform_datum.scholarship_period.end
+
+
+
+.row 
+  .label.label-success.sqlabel
+    .big 
+      = @perform_datum.quantity5
+    .tiny
+      = Student.human_attribute_name(:"Количество 5")
+  .label.label-success.sqlabel
+    .big 
+      = @perform_datum.quantity4
+    .tiny
+      = Student.human_attribute_name(:"Количество 4")
+  .label.label-warning.sqlabel
+    .big 
+      = @perform_datum.quantity3
+    .tiny
+      = Student.human_attribute_name(:"Количество 3")
+  .label.label-danger.sqlabel
+    .big 
+      = @perform_datum.quantity2
+    .tiny
+      = Student.human_attribute_name(:"Количество 2")
+  
+  .label.label-warning.sqlabel
+    .big 
+      = @perform_datum.scholarship_period.begin
+    .tiny
+      = Student.human_attribute_name(:"Начало начисления стипендий")
+  .label.label-warning.sqlabel
+    .big 
+      = @perform_datum.scholarship_period.end
+    .tiny
+      = Student.human_attribute_name(:"Окончание начисления стипендий")
+%br
 
 = link_to 'Редактировать', edit_perform_datum_path(@perform_datum), class: "btn btn-warning"
 \|
